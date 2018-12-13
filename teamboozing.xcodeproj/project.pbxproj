@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		784021798B4FF69D684F4300 /* Pods_teamboozing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7403D487632374F464BEA402 /* Pods_teamboozing.framework */; };
+		9625F9AF212ACD59004842A0 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625F9AE212ACD59004842A0 /* DrinkViewController.swift */; };
+		9625F9B1212ACD67004842A0 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625F9B0212ACD67004842A0 /* EndViewController.swift */; };
+		9625F9B3212AE51F004842A0 /* CompletedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625F9B2212AE51F004842A0 /* CompletedButton.swift */; };
+		966D316C2126B090002D467D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D316B2126B090002D467D /* AppDelegate.swift */; };
+		966D316E2126B090002D467D /* EnterNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D316D2126B090002D467D /* EnterNamesViewController.swift */; };
+		966D31732126B091002D467D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966D31722126B091002D467D /* Assets.xcassets */; };
+		966D31762126B091002D467D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966D31742126B091002D467D /* LaunchScreen.storyboard */; };
+		966D317E2126B47B002D467D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D317D2126B47B002D467D /* Team.swift */; };
+		966D31802126B4BD002D467D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D317F2126B4BD002D467D /* Player.swift */; };
+		966D31822126B4D7002D467D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D31812126B4D7002D467D /* Game.swift */; };
+		966D31842126B6D8002D467D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D31832126B6D8002D467D /* Extensions.swift */; };
+		966D31872126C344002D467D /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D31862126C344002D467D /* PlayerTableViewCell.swift */; };
+		966D31892126ECBD002D467D /* TeamRostersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D31882126ECBD002D467D /* TeamRostersViewController.swift */; };
+		966D318C2126F88E002D467D /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D318B2126F88E002D467D /* TeamView.swift */; };
+		966D318F2126FF8E002D467D /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D318E2126FF8E002D467D /* ContinueButton.swift */; };
+		966D31912126FF99002D467D /* DrinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D31902126FF99002D467D /* DrinkButton.swift */; };
+		966D3193212703C0002D467D /* TeamQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D3192212703C0002D467D /* TeamQuestionViewController.swift */; };
+		966D3195212703CE002D467D /* AllQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D3194212703CE002D467D /* AllQuestionViewController.swift */; };
+		966D31972127040D002D467D /* QuitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D31962127040D002D467D /* QuitButton.swift */; };
+		966D319A212704FD002D467D /* QuestionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D3199212704FD002D467D /* QuestionLabel.swift */; };
+		966D319C21270514002D467D /* MembersLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D319B21270514002D467D /* MembersLabel.swift */; };
+		966D319E21270952002D467D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D319D21270952002D467D /* Question.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7403D487632374F464BEA402 /* Pods_teamboozing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teamboozing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9625F9AE212ACD59004842A0 /* DrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
+		9625F9B0212ACD67004842A0 /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
+		9625F9B2212AE51F004842A0 /* CompletedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedButton.swift; sourceTree = "<group>"; };
+		966D31682126B090002D467D /* teamboozing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teamboozing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		966D316B2126B090002D467D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		966D316D2126B090002D467D /* EnterNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNamesViewController.swift; sourceTree = "<group>"; };
+		966D31722126B091002D467D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		966D31752126B091002D467D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		966D31772126B091002D467D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		966D317D2126B47B002D467D /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		966D317F2126B4BD002D467D /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		966D31812126B4D7002D467D /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		966D31832126B6D8002D467D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		966D31862126C344002D467D /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		966D31882126ECBD002D467D /* TeamRostersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRostersViewController.swift; sourceTree = "<group>"; };
+		966D318B2126F88E002D467D /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
+		966D318E2126FF8E002D467D /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
+		966D31902126FF99002D467D /* DrinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkButton.swift; sourceTree = "<group>"; };
+		966D3192212703C0002D467D /* TeamQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamQuestionViewController.swift; sourceTree = "<group>"; };
+		966D3194212703CE002D467D /* AllQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuestionViewController.swift; sourceTree = "<group>"; };
+		966D31962127040D002D467D /* QuitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitButton.swift; sourceTree = "<group>"; };
+		966D3199212704FD002D467D /* QuestionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLabel.swift; sourceTree = "<group>"; };
+		966D319B21270514002D467D /* MembersLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersLabel.swift; sourceTree = "<group>"; };
+		966D319D21270952002D467D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		AC89E379B44A01E3E0DDCD5F /* Pods-teamboozing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teamboozing.release.xcconfig"; path = "Pods/Target Support Files/Pods-teamboozing/Pods-teamboozing.release.xcconfig"; sourceTree = "<group>"; };
+		B8E12F456E42B1EC0048639C /* Pods-teamboozing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teamboozing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-teamboozing/Pods-teamboozing.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		966D31652126B090002D467D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				784021798B4FF69D684F4300 /* Pods_teamboozing.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		72F5AB5536DB36BA19101522 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8E12F456E42B1EC0048639C /* Pods-teamboozing.debug.xcconfig */,
+				AC89E379B44A01E3E0DDCD5F /* Pods-teamboozing.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		966D315F2126B090002D467D = {
+			isa = PBXGroup;
+			children = (
+				966D316A2126B090002D467D /* teamboozing */,
+				966D31692126B090002D467D /* Products */,
+				72F5AB5536DB36BA19101522 /* Pods */,
+				B931C83D48B2FBC41F7F7564 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		966D31692126B090002D467D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				966D31682126B090002D467D /* teamboozing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		966D316A2126B090002D467D /* teamboozing */ = {
+			isa = PBXGroup;
+			children = (
+				966D3198212704F2002D467D /* Labels */,
+				966D318D2126FF7A002D467D /* Buttons */,
+				966D318A2126F879002D467D /* Cells */,
+				966D31852126BE7E002D467D /* ViewControllers */,
+				966D316B2126B090002D467D /* AppDelegate.swift */,
+				966D31722126B091002D467D /* Assets.xcassets */,
+				966D31742126B091002D467D /* LaunchScreen.storyboard */,
+				966D31772126B091002D467D /* Info.plist */,
+				966D317D2126B47B002D467D /* Team.swift */,
+				966D317F2126B4BD002D467D /* Player.swift */,
+				966D31812126B4D7002D467D /* Game.swift */,
+				966D31832126B6D8002D467D /* Extensions.swift */,
+				966D319D21270952002D467D /* Question.swift */,
+			);
+			path = teamboozing;
+			sourceTree = "<group>";
+		};
+		966D31852126BE7E002D467D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				966D316D2126B090002D467D /* EnterNamesViewController.swift */,
+				966D31882126ECBD002D467D /* TeamRostersViewController.swift */,
+				966D3192212703C0002D467D /* TeamQuestionViewController.swift */,
+				966D3194212703CE002D467D /* AllQuestionViewController.swift */,
+				9625F9AE212ACD59004842A0 /* DrinkViewController.swift */,
+				9625F9B0212ACD67004842A0 /* EndViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		966D318A2126F879002D467D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				966D31862126C344002D467D /* PlayerTableViewCell.swift */,
+				966D318B2126F88E002D467D /* TeamView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		966D318D2126FF7A002D467D /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				966D318E2126FF8E002D467D /* ContinueButton.swift */,
+				966D31902126FF99002D467D /* DrinkButton.swift */,
+				966D31962127040D002D467D /* QuitButton.swift */,
+				9625F9B2212AE51F004842A0 /* CompletedButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		966D3198212704F2002D467D /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				966D3199212704FD002D467D /* QuestionLabel.swift */,
+				966D319B21270514002D467D /* MembersLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		B931C83D48B2FBC41F7F7564 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7403D487632374F464BEA402 /* Pods_teamboozing.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		966D31672126B090002D467D /* teamboozing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 966D317A2126B091002D467D /* Build configuration list for PBXNativeTarget "teamboozing" */;
+			buildPhases = (
+				B2FAE5F3C668D3EA0472BAE3 /* [CP] Check Pods Manifest.lock */,
+				966D31642126B090002D467D /* Sources */,
+				966D31652126B090002D467D /* Frameworks */,
+				966D31662126B090002D467D /* Resources */,
+				314D0389E23FA57882A5F6D7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = teamboozing;
+			productName = teamboozing;
+			productReference = 966D31682126B090002D467D /* teamboozing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		966D31602126B090002D467D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = MasterApp;
+				TargetAttributes = {
+					966D31672126B090002D467D = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 966D31632126B090002D467D /* Build configuration list for PBXProject "teamboozing" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 966D315F2126B090002D467D;
+			productRefGroup = 966D31692126B090002D467D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				966D31672126B090002D467D /* teamboozing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		966D31662126B090002D467D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				966D31762126B091002D467D /* LaunchScreen.storyboard in Resources */,
+				966D31732126B091002D467D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		314D0389E23FA57882A5F6D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-teamboozing/Pods-teamboozing-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-teamboozing/Pods-teamboozing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2FAE5F3C668D3EA0472BAE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-teamboozing-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		966D31642126B090002D467D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				966D31872126C344002D467D /* PlayerTableViewCell.swift in Sources */,
+				966D31802126B4BD002D467D /* Player.swift in Sources */,
+				966D318F2126FF8E002D467D /* ContinueButton.swift in Sources */,
+				966D319E21270952002D467D /* Question.swift in Sources */,
+				966D31892126ECBD002D467D /* TeamRostersViewController.swift in Sources */,
+				9625F9B3212AE51F004842A0 /* CompletedButton.swift in Sources */,
+				966D318C2126F88E002D467D /* TeamView.swift in Sources */,
+				966D31842126B6D8002D467D /* Extensions.swift in Sources */,
+				966D31972127040D002D467D /* QuitButton.swift in Sources */,
+				966D3193212703C0002D467D /* TeamQuestionViewController.swift in Sources */,
+				966D319C21270514002D467D /* MembersLabel.swift in Sources */,
+				966D31822126B4D7002D467D /* Game.swift in Sources */,
+				966D31912126FF99002D467D /* DrinkButton.swift in Sources */,
+				966D3195212703CE002D467D /* AllQuestionViewController.swift in Sources */,
+				966D319A212704FD002D467D /* QuestionLabel.swift in Sources */,
+				966D317E2126B47B002D467D /* Team.swift in Sources */,
+				9625F9AF212ACD59004842A0 /* DrinkViewController.swift in Sources */,
+				966D316E2126B090002D467D /* EnterNamesViewController.swift in Sources */,
+				9625F9B1212ACD67004842A0 /* EndViewController.swift in Sources */,
+				966D316C2126B090002D467D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		966D31742126B091002D467D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				966D31752126B091002D467D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		966D31782126B091002D467D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		966D31792126B091002D467D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		966D317B2126B091002D467D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8E12F456E42B1EC0048639C /* Pods-teamboozing.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3633RW6LYQ;
+				INFOPLIST_FILE = teamboozing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cz.master.teamboozing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		966D317C2126B091002D467D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC89E379B44A01E3E0DDCD5F /* Pods-teamboozing.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3633RW6LYQ;
+				INFOPLIST_FILE = teamboozing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cz.master.teamboozing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		966D31632126B090002D467D /* Build configuration list for PBXProject "teamboozing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				966D31782126B091002D467D /* Debug */,
+				966D31792126B091002D467D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		966D317A2126B091002D467D /* Build configuration list for PBXNativeTarget "teamboozing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				966D317B2126B091002D467D /* Debug */,
+				966D317C2126B091002D467D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 966D31602126B090002D467D /* Project object */;
+}

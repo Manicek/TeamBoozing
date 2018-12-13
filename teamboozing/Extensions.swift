@@ -1,0 +1,65 @@
+//
+//  Extensions.swift
+//  teamboozing
+//
+//  Created by Patrik Hora on 17/08/2018.
+//  Copyright © 2018 MasterApp. All rights reserved.
+//
+
+import UIKit
+
+extension MutableCollection where Index == Int {
+    
+    /// Shuffle the elements of `self` in-place.
+    mutating func shuffle() {
+        // empty and single-element collections don't shuffle
+        if count < 2 { return }
+        
+        for i in startIndex ..< endIndex - 1 {
+            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
+            if i != j {
+                self.swapAt(i, j)
+            }
+        }
+    }
+}
+
+extension UIColor {
+    
+    static var team1Color = UIColor(rgb: 0, 255, 255)
+    static var team2Color = UIColor(rgb: 255, 0, 255)
+    static var team3Color = UIColor(rgb: 255, 255, 0)
+    
+    static var background = UIColor(rgb: 226, 236, 255)
+    
+    convenience init(rgb red: CGFloat, _ green: CGFloat, _ blue: CGFloat, alpha: CGFloat = 1.0) {
+        self.init(red: red / 255.0, green: green / 255.0, blue: blue / 255.0, alpha: alpha)
+    }
+}
+
+extension UIViewController {
+    
+    /// Displays simple alert with message and title
+    func showBasicAlert(message: String, title: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: "|||OK"), style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension UIView {
+    
+    func addSubviews(_ subviews: [UIView]) {
+        for subview in subviews {
+            addSubview(subview)
+        }
+    }
+}
+
+extension UITableViewCell {
+    
+    static var cellIdentifier: String {
+        return String(describing: self)
+    }
+}
