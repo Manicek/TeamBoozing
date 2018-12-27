@@ -8,6 +8,20 @@
 
 import UIKit
 
+extension Int {
+    static func random(_ upperBound: Int) -> Int {
+        return Int(arc4random_uniform(UInt32(upperBound)))
+    }
+    
+    /// Returns random Int between given bounds, inclusive. Swaps the bounds if lower > upper.
+    static func randomBetween(_ lowerBound: Int, _ upperBound: Int) -> Int {
+        if lowerBound > upperBound {
+            return randomBetween(upperBound, lowerBound)
+        }
+        return random(upperBound - lowerBound + 1) + lowerBound
+    }
+}
+
 extension MutableCollection where Index == Int {
     
     /// Shuffle the elements of `self` in-place.
