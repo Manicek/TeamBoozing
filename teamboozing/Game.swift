@@ -85,7 +85,25 @@ class Game {
         }
     }
     
-    static func end() {
+    static func showEndAlert(from vc: UIViewController) {
+        let clearAlert = UIAlertController(title: "End", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let endAction = UIAlertAction(title: "End game", style: .destructive) {
+            (result : UIAlertAction) -> Void in
+            
+            Game.end()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+            (result : UIAlertAction) -> Void in
+        }
+        
+        clearAlert.addAction(endAction)
+        clearAlert.addAction(cancelAction)
+        
+        vc.present(clearAlert, animated: true, completion: nil)
+    }
+    
+    private static func end() {
         let vc = EndViewController()
         navigationController.setViewControllers([vc], animated: true)
     }

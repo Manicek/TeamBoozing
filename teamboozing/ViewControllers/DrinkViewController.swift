@@ -35,7 +35,7 @@ class DrinkViewController: UIViewController {
     }
     
     @objc func quitButtonTapped() {
-        Game.end() //TODO alert
+        Game.showEndAlert(from: self)
     }
     
     @objc func continueButtonTapped() {
