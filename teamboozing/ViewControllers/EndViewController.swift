@@ -80,7 +80,7 @@ class TeamResultView: UIView {
         backgroundColor = team.color
         layer.cornerRadius = 10
         
-        drinkCountLabel.font = UIFont.boldSystemFont(ofSize: 32)
+        drinkCountLabel.font = .drinkCount
         drinkCountLabel.text = "\(team.drinks) X"
         
         addSubviews([

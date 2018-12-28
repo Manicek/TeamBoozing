@@ -11,6 +11,7 @@
 		9625F9AF212ACD59004842A0 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625F9AE212ACD59004842A0 /* DrinkViewController.swift */; };
 		9625F9B1212ACD67004842A0 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625F9B0212ACD67004842A0 /* EndViewController.swift */; };
 		9625F9B3212AE51F004842A0 /* CompletedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625F9B2212AE51F004842A0 /* CompletedButton.swift */; };
+		9634119621D6A85D00103A95 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9634119521D6A85D00103A95 /* Fonts.swift */; };
 		966D316C2126B090002D467D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D316B2126B090002D467D /* AppDelegate.swift */; };
 		966D316E2126B090002D467D /* EnterNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D316D2126B090002D467D /* EnterNamesViewController.swift */; };
 		966D31732126B091002D467D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966D31722126B091002D467D /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		9625F9AE212ACD59004842A0 /* DrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
 		9625F9B0212ACD67004842A0 /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 		9625F9B2212AE51F004842A0 /* CompletedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedButton.swift; sourceTree = "<group>"; };
+		9634119521D6A85D00103A95 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		966D31682126B090002D467D /* teamboozing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teamboozing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966D316B2126B090002D467D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		966D316D2126B090002D467D /* EnterNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNamesViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				966D31812126B4D7002D467D /* Game.swift */,
 				966D31832126B6D8002D467D /* Extensions.swift */,
 				966D319D21270952002D467D /* Question.swift */,
+				9634119521D6A85D00103A95 /* Fonts.swift */,
 			);
 			path = teamboozing;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				966D31892126ECBD002D467D /* TeamRostersViewController.swift in Sources */,
 				9625F9B3212AE51F004842A0 /* CompletedButton.swift in Sources */,
 				966D318C2126F88E002D467D /* TeamView.swift in Sources */,
+				9634119621D6A85D00103A95 /* Fonts.swift in Sources */,
 				966D31842126B6D8002D467D /* Extensions.swift in Sources */,
 				966D31972127040D002D467D /* QuitButton.swift in Sources */,
 				966D3193212703C0002D467D /* TeamQuestionViewController.swift in Sources */,

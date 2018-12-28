@@ -16,7 +16,7 @@ class EnterNamesViewController: UIViewController {
     private let addButton = UIButton()
     private let continueButton = ContinueButton()
     
-    private var players = [Player]()
+    private var players = [Player(name: "Prvni"), Player(name: "Druhy"), Player(name: "Treti"), Player(name: "Ctvrty"), Player(name: "Paty")] //[Player]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,7 +108,7 @@ private extension EnterNamesViewController {
         
         nameTextField.delegate = self
         nameTextField.placeholder = "Player name"
-        nameTextField.font = UIFont.systemFont(ofSize: 24)
+        nameTextField.font = .nameEnter
         nameTextField.layer.cornerRadius = 8
         nameTextField.textAlignment = .center
         nameTextField.returnKeyType = .done
@@ -121,7 +121,7 @@ private extension EnterNamesViewController {
         tableView.backgroundColor = .clear
         tableView.register(PlayerTableViewCell.self, forCellReuseIdentifier: PlayerTableViewCell.cellIdentifier)
         
-        addButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
+        addButton.titleLabel?.font = .addButton
         addButton.setTitleColor(.black, for: .normal)
         addButton.setTitle("Add player", for: .normal)
         addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)

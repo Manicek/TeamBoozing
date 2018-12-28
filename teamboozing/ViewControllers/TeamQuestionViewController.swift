@@ -18,14 +18,14 @@ class TeamQuestionViewController: UIViewController {
     private let team: Team
     private let difficulty: Int
 
-    init(team: Team, questionText: String, difficulty: Int) {
+    init(team: Team, questionText: NSMutableAttributedString, difficulty: Int) {
         self.team = team
         self.difficulty = difficulty
         super.init(nibName: nil, bundle: nil)
         
         view.backgroundColor = team.color
         membersLabel.fillWithPlayers(team.players)
-        questionLabel.text = questionText
+        questionLabel.attributedText = questionText
     }
     
     override func viewDidLoad() {

@@ -20,7 +20,7 @@ class AllQuestionViewController: UIViewController {
         self.question = question
         super.init(nibName: nil, bundle: nil)
         
-        questionLabel.text = question.text()
+        questionLabel.text = question.allText()
     }
     
     override func viewDidLoad() {
@@ -82,7 +82,7 @@ private extension AllQuestionViewController {
 
         drinkStackView.snp.makeConstraints { (make) in
             make.centerX.equalTo(questionLabel)
-            make.width.equalTo(Game.teams.count * 80)
+            make.width.equalTo(Game.teams.count * 70 + (Game.teams.count - 1) * 10)
             make.height.equalTo(70)
             make.bottom.equalToSuperview().inset(40)
         }

@@ -19,7 +19,7 @@ class TeamView: UIView {
         
         backgroundColor = team.color
         membersLabel.fillWithPlayers(team.players)
-        membersLabel.font = UIFont.systemFont(ofSize: 28)
+        membersLabel.font = .membersLarge
         
         addSubview(membersLabel)
         membersLabel.snp.makeConstraints { (make) in

@@ -16,7 +16,7 @@ class QuestionLabel: UILabel {
         numberOfLines = 0
         lineBreakMode = .byWordWrapping
         textAlignment = .center
-        font = UIFont.systemFont(ofSize: 32)
+        font = .questionDefault
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }

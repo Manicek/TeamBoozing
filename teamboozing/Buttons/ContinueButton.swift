@@ -27,7 +27,7 @@ class ContinueButton: UIButton {
         
         contentEdgeInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         
-        titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
+        titleLabel?.font = .continueButton
         setTitleColor(.black, for: .normal)
         setTitle("Continue", for: .normal)
     }

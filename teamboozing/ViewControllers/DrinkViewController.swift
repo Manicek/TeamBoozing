@@ -50,7 +50,7 @@ private extension DrinkViewController {
     func setupUI() {
         imageView.image = #imageLiteral(resourceName: "beer")
         
-        drinkCountLabel.font = UIFont.boldSystemFont(ofSize: 40)
+        drinkCountLabel.font = .drinkCount
         drinkCountLabel.text = "\(drinkCount) X"
         
         continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)

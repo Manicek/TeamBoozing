@@ -40,9 +40,9 @@ extension MutableCollection where Index == Int {
 
 extension UIColor {
     
-    static var team1Color = UIColor(rgb: 0, 255, 255)
-    static var team2Color = UIColor(rgb: 255, 0, 255)
-    static var team3Color = UIColor(rgb: 255, 255, 0)
+    static var team1Color = UIColor(rgb: 150, 255, 255)
+    static var team2Color = UIColor(rgb: 255, 150, 255)
+    static var team3Color = UIColor(rgb: 255, 255, 150)
     
     static var background = UIColor(rgb: 226, 236, 255)
     
@@ -75,5 +75,36 @@ extension UITableViewCell {
     
     static var cellIdentifier: String {
         return String(describing: self)
+    }
+}
+
+extension String {
+    static func stringWithHighlightedSubString(
+        string: String,
+        subString: String
+        ) -> NSMutableAttributedString {
+        
+        var defaultAttributes: [NSAttributedStringKey : Any] = [:]
+        var highlightedAttributes: [NSAttributedStringKey : Any] = [:]
+        
+        defaultAttributes.updateValue(UIColor.black, forKey: NSAttributedStringKey.foregroundColor)
+        
+        highlightedAttributes.updateValue(UIFont.questionHighlighted, forKey: NSAttributedStringKey.font)
+        highlightedAttributes.updateValue(UIColor.white, forKey: NSAttributedStringKey.foregroundColor)
+        highlightedAttributes.updateValue(UIColor.black, forKey: NSAttributedStringKey.strokeColor)
+        highlightedAttributes.updateValue(-3, forKey: NSAttributedStringKey.strokeWidth)
+        
+        let textAttributedString = NSMutableAttributedString (
+            string: string,
+            attributes: defaultAttributes
+        )
+        
+        let range = (string as NSString).range(of: subString)
+        
+        textAttributedString.addAttributes(
+            highlightedAttributes,
+            range: range)
+        
+        return textAttributedString
     }
 }

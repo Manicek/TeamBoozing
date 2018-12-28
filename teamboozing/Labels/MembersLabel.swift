@@ -16,7 +16,7 @@ class MembersLabel: UILabel {
         numberOfLines = 0
         lineBreakMode = .byWordWrapping
         textAlignment = .center
-        font = UIFont.systemFont(ofSize: 24)
+        font = .membersSmall
     }
     
     func fillWithPlayers(_ players: [Player]) {
