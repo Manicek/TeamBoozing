@@ -13,7 +13,6 @@ class EnterNamesViewController: UIViewController {
     
     private let tableView = UITableView()
     private let nameTextField = UITextField()
-    private let addButton = UIButton()
     private let continueButton = ContinueButton()
     
     private var players = [Player(name: "Prvni"), Player(name: "Druhy"), Player(name: "Treti"), Player(name: "Ctvrty"), Player(name: "Paty")] //[Player]()
@@ -25,18 +24,12 @@ class EnterNamesViewController: UIViewController {
         addSubviewsAndSetupConstraints()
     }
     
-    @objc func addButtonTapped() {
-        guard let name = nameTextField.text, !name.isEmpty else { return }
-        for player in players {
-            if player.name == name {
-                showBasicAlert(message: "Name already taken, choose a different one", title: "Sorry!")
-                return
-            }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !Game.teams.isEmpty {
+            showReusePlayersAlert()
         }
-        players.append(Player(name: name))
-        continueButton.isEnabled = players.count > 3
-        nameTextField.text = ""
-        tableView.reloadData()
     }
     
     @objc func tapRecognized() {
@@ -52,7 +45,7 @@ class EnterNamesViewController: UIViewController {
 extension EnterNamesViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        addButtonTapped()
+        addPlayer()
         return false
     }
 }
@@ -89,12 +82,51 @@ extension EnterNamesViewController: PlayerTableViewCellDelegate {
         if indexToDelete > -1 {
             players.remove(at: indexToDelete)
         }
-        continueButton.isEnabled = players.count > 3
+        checkPlayerCount()
         tableView.reloadData()
     }
 }
 
 private extension EnterNamesViewController {
+    
+    func addPlayer() {
+        guard let name = nameTextField.text, !name.isEmpty else { return }
+        for player in players {
+            if player.name == name {
+                showBasicAlert(message: "Jméno už je zabrané, vyber jiné", title: "Sorry!")
+                return
+            }
+        }
+        players.append(Player(name: name))
+        checkPlayerCount()
+        nameTextField.text = ""
+        tableView.reloadData()
+    }
+    
+    func checkPlayerCount() {
+        continueButton.isEnabled = players.count > 3
+    }
+    
+    func showReusePlayersAlert() {
+        let reusePlayersAlert = UIAlertController(title: "Znovu!", message: "Chcete předvyplnit jména hráčů z minule?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let reuseAction = UIAlertAction(title: "Ano", style: .default) { (_) -> Void in
+            self.players = [Player]()
+            for team in Game.teams {
+                for player in team.players {
+                    self.players.append(player)
+                }
+            }
+            self.checkPlayerCount()
+            self.tableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Ne", style: .cancel)
+        
+        reusePlayersAlert.addAction(reuseAction)
+        reusePlayersAlert.addAction(cancelAction)
+        
+        present(reusePlayersAlert, animated: true, completion: nil)
+    }
     
     func setupUI() {
         view.backgroundColor = .background
@@ -121,11 +153,6 @@ private extension EnterNamesViewController {
         tableView.backgroundColor = .clear
         tableView.register(PlayerTableViewCell.self, forCellReuseIdentifier: PlayerTableViewCell.cellIdentifier)
         
-        addButton.titleLabel?.font = .addButton
-        addButton.setTitleColor(.black, for: .normal)
-        addButton.setTitle("Add player", for: .normal)
-        addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
-        
         continueButton.isEnabled = false
         continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
     }
@@ -134,7 +161,6 @@ private extension EnterNamesViewController {
         view.addSubviews([
             tableView,
             nameTextField,
-            addButton,
             continueButton
             ])
         
@@ -145,15 +171,10 @@ private extension EnterNamesViewController {
             make.top.equalTo(topLayoutGuide.snp.bottom)
         }
         
-        addButton.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(nameTextField.snp.bottom).offset(5)
-        }
-        
         tableView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.75)
-            make.top.equalTo(addButton.snp.bottom).offset(10)
+            make.top.equalTo(nameTextField.snp.bottom).offset(10)
             make.bottom.equalTo(continueButton.snp.top).offset(-10)
         }
         

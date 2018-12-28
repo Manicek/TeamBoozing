@@ -16,7 +16,6 @@ extension UIFont {
     static var continueButton = font(24)
     static var playerCell = font(24)
     static var nameEnter = font(24)
-    static var addButton = font(24)
     static var drinkCount = font(32)
     
     private static func font(_ size: CGFloat) -> UIFont {

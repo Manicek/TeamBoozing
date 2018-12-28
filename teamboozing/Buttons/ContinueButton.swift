@@ -17,7 +17,7 @@ class ContinueButton: UIButton {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: super.intrinsicContentSize.width, height: 50)
+        return CGSize(width: super.intrinsicContentSize.width, height: UIDevice.current.userInterfaceIdiom == .pad ? 75 : 50)
     }
 
     init() {
