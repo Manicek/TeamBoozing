@@ -60,7 +60,6 @@ private extension EndViewController {
         
         completedButton.snp.makeConstraints { (make) in
             make.top.equalTo(stackView.snp.bottom).offset(20)
-            make.width.height.equalTo(70)
             make.centerX.equalToSuperview()
         }
     }
@@ -91,7 +90,7 @@ class TeamResultView: UIView {
         imageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
             make.left.equalTo(self.snp.centerX).offset(20)
-            make.height.width.equalTo(60)
+            make.size.equalTo(DrinkButton.size)
         }
         
         drinkCountLabel.snp.makeConstraints { (make) in

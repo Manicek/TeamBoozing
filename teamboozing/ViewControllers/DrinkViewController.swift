@@ -70,7 +70,6 @@ private extension DrinkViewController {
         quitButton.snp.makeConstraints { (make) in
             make.top.equalTo(topLayoutGuide.snp.bottom)
             make.right.equalToSuperview().inset(20)
-            make.height.width.equalTo(50)
         }
         
         membersLabel.snp.makeConstraints { (make) in
@@ -82,7 +81,7 @@ private extension DrinkViewController {
         imageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
             make.left.equalTo(view.snp.centerX).offset(20)
-            make.height.width.equalTo(80)
+            make.size.equalTo(DrinkButton.size)
             
         }
         

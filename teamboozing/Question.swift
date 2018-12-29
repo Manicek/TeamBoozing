@@ -42,8 +42,12 @@ class Question {
     }
     
     static var allQuestions: [Question] {
-        return originalQuestions
+        return originalQuestions + silvesterQuestions
     }
+    
+    static let silvesterQuestions = [
+        Question("sundej si tričko", difficulty: 3)
+    ]
     
     static let originalQuestions = [
         Question("jmenuj pět dobrých vlastností svého šéfa", difficulty: 3),

@@ -49,9 +49,6 @@ private extension AllQuestionViewController {
         for team in Game.teams {
             let drinkButton = DrinkButton(team: team)
             drinkButton.addTarget(self, action: #selector(drinkButtonTapped(_:)), for: .touchUpInside)
-            drinkButton.snp.makeConstraints { (make) in
-                make.width.height.equalTo(70)
-            }
             drinkStackView.addArrangedSubview(drinkButton)
         }
         
@@ -71,7 +68,6 @@ private extension AllQuestionViewController {
         quitButton.snp.makeConstraints { (make) in
             make.top.equalTo(topLayoutGuide.snp.bottom)
             make.right.equalToSuperview().inset(20)
-            make.height.width.equalTo(50)
         }
         
         questionLabel.snp.makeConstraints { (make) in
@@ -82,8 +78,8 @@ private extension AllQuestionViewController {
 
         drinkStackView.snp.makeConstraints { (make) in
             make.centerX.equalTo(questionLabel)
-            make.width.equalTo(Game.teams.count * 70 + (Game.teams.count - 1) * 10)
-            make.height.equalTo(70)
+            make.width.equalTo(Game.teams.count * DrinkButton.size + (Game.teams.count - 1) * 10)
+            make.height.equalTo(DrinkButton.size)
             make.bottom.equalToSuperview().inset(40)
         }
     }

@@ -10,7 +10,12 @@ import UIKit
 
 class DrinkButton: UIButton {
 
+    static let size = UIDevice.isPad ? 150 : 70
     private(set) var team: Team?
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: DrinkButton.size, height: DrinkButton.size)
+    }
     
     init(team: Team? = nil) {
         super.init(frame: .zero)
@@ -20,8 +25,13 @@ class DrinkButton: UIButton {
         self.team = team
         if let color = team?.color {
             backgroundColor = color
-            layer.cornerRadius = 35
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layer.cornerRadius = frame.height / 2
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }

@@ -74,7 +74,6 @@ private extension TeamQuestionViewController {
         quitButton.snp.makeConstraints { (make) in
             make.top.equalTo(topLayoutGuide.snp.bottom)
             make.right.equalToSuperview().inset(20)
-            make.height.width.equalTo(50)
         }
         
         membersLabel.snp.makeConstraints { (make) in
@@ -91,7 +90,6 @@ private extension TeamQuestionViewController {
         drinkButton.snp.makeConstraints { (make) in
             make.right.equalTo(view.snp.centerX).offset(-30)
             make.bottom.equalToSuperview().inset(40)
-            make.height.width.equalTo(70)
         }
         
         completedButton.snp.makeConstraints { (make) in
