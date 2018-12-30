@@ -80,7 +80,7 @@ class TeamResultView: UIView {
         layer.cornerRadius = 10
         
         drinkCountLabel.font = .drinkCount
-        drinkCountLabel.text = "\(team.drinks) X"
+        drinkCountLabel.text = "\(team.drinks) x"
         
         addSubviews([
             imageView,

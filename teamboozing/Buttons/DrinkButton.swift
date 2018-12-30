@@ -10,7 +10,7 @@ import UIKit
 
 class DrinkButton: UIButton {
 
-    static let size: CGFloat = UIDevice.isPad ? 150 : 70
+    static let size: CGFloat = UIDevice.isPad ? 150 : 80
     private(set) var team: Team?
     
     override var intrinsicContentSize: CGSize {

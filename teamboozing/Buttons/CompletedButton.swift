@@ -10,7 +10,7 @@ import UIKit
 
 class CompletedButton: UIButton {
     
-    static let size = UIDevice.isPad ? 150 : 70
+    static let size = UIDevice.isPad ? 150 : 80
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: CompletedButton.size, height: CompletedButton.size)

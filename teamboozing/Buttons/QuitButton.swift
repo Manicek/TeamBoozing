@@ -10,7 +10,7 @@ import UIKit
 
 class QuitButton: UIButton {
     
-    static let size: CGFloat = 70
+    static let size: CGFloat = UIDevice.isPad ? 70 : 40
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: QuitButton.size, height: QuitButton.size)

@@ -51,7 +51,7 @@ private extension DrinkViewController {
         imageView.image = #imageLiteral(resourceName: "beer")
         
         drinkCountLabel.font = .drinkCount
-        drinkCountLabel.text = "\(drinkCount) X"
+        drinkCountLabel.text = "\(drinkCount) x"
         
         continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
                 
