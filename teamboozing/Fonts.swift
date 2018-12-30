@@ -13,6 +13,8 @@ extension UIFont {
     static var questionHighlighted = font(40)
     static var membersSmall = font(24)
     static var membersLarge = font(28)
+    static var minimumPlayer = font(24)
+    static var startButton = font(24)
     static var continueButton = font(24)
     static var playerCell = font(24)
     static var nameEnter = font(24)

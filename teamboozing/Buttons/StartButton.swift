@@ -1,21 +1,22 @@
 //
-//  ContinueButton.swift
+//  StartButton.swift
 //  teamboozing
 //
-//  Created by Patrik Hora on 17/08/2018.
+//  Created by Patrik Hora on 29/12/2018.
 //  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
 
-class ContinueButton: UIButton {
+class StartButton: UIButton {
     
     static let size: CGFloat = UIDevice.isPad ? 75 : 50
+    private(set) var team: Team?
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: super.intrinsicContentSize.width, height: ContinueButton.size)
+        return CGSize(width: super.intrinsicContentSize.width, height: StartButton.size)
     }
-
+    
     init() {
         super.init(frame: .zero)
         
@@ -23,9 +24,9 @@ class ContinueButton: UIButton {
         
         contentEdgeInsets = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
         
-        titleLabel?.font = .continueButton
+        titleLabel?.font = .startButton
         setTitleColor(.black, for: .normal)
-        setTitle("Pokračovat", for: .normal)
+        setTitle("Začít hru", for: .normal)
     }
     
     override func layoutSubviews() {
@@ -35,5 +36,5 @@ class ContinueButton: UIButton {
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-
+    
 }

@@ -78,7 +78,7 @@ private extension AllQuestionViewController {
 
         drinkStackView.snp.makeConstraints { (make) in
             make.centerX.equalTo(questionLabel)
-            make.width.equalTo(Game.teams.count * DrinkButton.size + (Game.teams.count - 1) * 10)
+            make.width.equalTo(Game.teams.count * Int(DrinkButton.size) + (Game.teams.count - 1) * 10)
             make.height.equalTo(DrinkButton.size)
             make.bottom.equalToSuperview().inset(40)
         }

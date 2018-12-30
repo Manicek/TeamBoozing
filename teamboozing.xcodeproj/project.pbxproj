@@ -21,8 +21,8 @@
 		966D31822126B4D7002D467D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D31812126B4D7002D467D /* Game.swift */; };
 		966D31842126B6D8002D467D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D31832126B6D8002D467D /* Extensions.swift */; };
 		966D31872126C344002D467D /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D31862126C344002D467D /* PlayerTableViewCell.swift */; };
-		966D31892126ECBD002D467D /* TeamRostersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D31882126ECBD002D467D /* TeamRostersViewController.swift */; };
-		966D318C2126F88E002D467D /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D318B2126F88E002D467D /* TeamView.swift */; };
+		966D31892126ECBD002D467D /* TeamsRosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D31882126ECBD002D467D /* TeamsRosterViewController.swift */; };
+		966D318C2126F88E002D467D /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D318B2126F88E002D467D /* TeamTableViewCell.swift */; };
 		966D318F2126FF8E002D467D /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D318E2126FF8E002D467D /* ContinueButton.swift */; };
 		966D31912126FF99002D467D /* DrinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D31902126FF99002D467D /* DrinkButton.swift */; };
 		966D3193212703C0002D467D /* TeamQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D3192212703C0002D467D /* TeamQuestionViewController.swift */; };
@@ -31,6 +31,9 @@
 		966D319A212704FD002D467D /* QuestionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D3199212704FD002D467D /* QuestionLabel.swift */; };
 		966D319C21270514002D467D /* MembersLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D319B21270514002D467D /* MembersLabel.swift */; };
 		966D319E21270952002D467D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D319D21270952002D467D /* Question.swift */; };
+		96D5659721D799EA00D646C0 /* EnterNamesTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D5659621D799EA00D646C0 /* EnterNamesTableViewManager.swift */; };
+		96D5659921D7F3B200D646C0 /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D5659821D7F3B200D646C0 /* StartButton.swift */; };
+		96D7DEEA21D8D3960022901A /* TeamsRosterTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D7DEE921D8D3960022901A /* TeamsRosterTableViewManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +53,8 @@
 		966D31812126B4D7002D467D /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		966D31832126B6D8002D467D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		966D31862126C344002D467D /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
-		966D31882126ECBD002D467D /* TeamRostersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRostersViewController.swift; sourceTree = "<group>"; };
-		966D318B2126F88E002D467D /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
+		966D31882126ECBD002D467D /* TeamsRosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRosterViewController.swift; sourceTree = "<group>"; };
+		966D318B2126F88E002D467D /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		966D318E2126FF8E002D467D /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
 		966D31902126FF99002D467D /* DrinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkButton.swift; sourceTree = "<group>"; };
 		966D3192212703C0002D467D /* TeamQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamQuestionViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +63,9 @@
 		966D3199212704FD002D467D /* QuestionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLabel.swift; sourceTree = "<group>"; };
 		966D319B21270514002D467D /* MembersLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersLabel.swift; sourceTree = "<group>"; };
 		966D319D21270952002D467D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		96D5659621D799EA00D646C0 /* EnterNamesTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNamesTableViewManager.swift; sourceTree = "<group>"; };
+		96D5659821D7F3B200D646C0 /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
+		96D7DEE921D8D3960022901A /* TeamsRosterTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRosterTableViewManager.swift; sourceTree = "<group>"; };
 		AC89E379B44A01E3E0DDCD5F /* Pods-teamboozing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teamboozing.release.xcconfig"; path = "Pods/Target Support Files/Pods-teamboozing/Pods-teamboozing.release.xcconfig"; sourceTree = "<group>"; };
 		B8E12F456E42B1EC0048639C /* Pods-teamboozing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teamboozing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-teamboozing/Pods-teamboozing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +114,6 @@
 			children = (
 				966D3198212704F2002D467D /* Labels */,
 				966D318D2126FF7A002D467D /* Buttons */,
-				966D318A2126F879002D467D /* Cells */,
 				966D31852126BE7E002D467D /* ViewControllers */,
 				966D316B2126B090002D467D /* AppDelegate.swift */,
 				966D31722126B091002D467D /* Assets.xcassets */,
@@ -127,23 +132,14 @@
 		966D31852126BE7E002D467D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				966D316D2126B090002D467D /* EnterNamesViewController.swift */,
-				966D31882126ECBD002D467D /* TeamRostersViewController.swift */,
+				96D7DEE821D8D2700022901A /* Teams Roster */,
+				96D5659521D799CC00D646C0 /* Enter Names */,
 				966D3192212703C0002D467D /* TeamQuestionViewController.swift */,
 				966D3194212703CE002D467D /* AllQuestionViewController.swift */,
 				9625F9AE212ACD59004842A0 /* DrinkViewController.swift */,
 				9625F9B0212ACD67004842A0 /* EndViewController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		966D318A2126F879002D467D /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				966D31862126C344002D467D /* PlayerTableViewCell.swift */,
-				966D318B2126F88E002D467D /* TeamView.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		966D318D2126FF7A002D467D /* Buttons */ = {
@@ -153,6 +149,7 @@
 				966D31902126FF99002D467D /* DrinkButton.swift */,
 				966D31962127040D002D467D /* QuitButton.swift */,
 				9625F9B2212AE51F004842A0 /* CompletedButton.swift */,
+				96D5659821D7F3B200D646C0 /* StartButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -164,6 +161,26 @@
 				966D319B21270514002D467D /* MembersLabel.swift */,
 			);
 			path = Labels;
+			sourceTree = "<group>";
+		};
+		96D5659521D799CC00D646C0 /* Enter Names */ = {
+			isa = PBXGroup;
+			children = (
+				966D31862126C344002D467D /* PlayerTableViewCell.swift */,
+				966D316D2126B090002D467D /* EnterNamesViewController.swift */,
+				96D5659621D799EA00D646C0 /* EnterNamesTableViewManager.swift */,
+			);
+			path = "Enter Names";
+			sourceTree = "<group>";
+		};
+		96D7DEE821D8D2700022901A /* Teams Roster */ = {
+			isa = PBXGroup;
+			children = (
+				966D318B2126F88E002D467D /* TeamTableViewCell.swift */,
+				966D31882126ECBD002D467D /* TeamsRosterViewController.swift */,
+				96D7DEE921D8D3960022901A /* TeamsRosterTableViewManager.swift */,
+			);
+			path = "Teams Roster";
 			sourceTree = "<group>";
 		};
 		B931C83D48B2FBC41F7F7564 /* Frameworks */ = {
@@ -289,14 +306,16 @@
 				966D31802126B4BD002D467D /* Player.swift in Sources */,
 				966D318F2126FF8E002D467D /* ContinueButton.swift in Sources */,
 				966D319E21270952002D467D /* Question.swift in Sources */,
-				966D31892126ECBD002D467D /* TeamRostersViewController.swift in Sources */,
+				966D31892126ECBD002D467D /* TeamsRosterViewController.swift in Sources */,
 				9625F9B3212AE51F004842A0 /* CompletedButton.swift in Sources */,
-				966D318C2126F88E002D467D /* TeamView.swift in Sources */,
+				96D5659721D799EA00D646C0 /* EnterNamesTableViewManager.swift in Sources */,
+				966D318C2126F88E002D467D /* TeamTableViewCell.swift in Sources */,
 				9634119621D6A85D00103A95 /* Fonts.swift in Sources */,
 				966D31842126B6D8002D467D /* Extensions.swift in Sources */,
 				966D31972127040D002D467D /* QuitButton.swift in Sources */,
 				966D3193212703C0002D467D /* TeamQuestionViewController.swift in Sources */,
 				966D319C21270514002D467D /* MembersLabel.swift in Sources */,
+				96D7DEEA21D8D3960022901A /* TeamsRosterTableViewManager.swift in Sources */,
 				966D31822126B4D7002D467D /* Game.swift in Sources */,
 				966D31912126FF99002D467D /* DrinkButton.swift in Sources */,
 				966D3195212703CE002D467D /* AllQuestionViewController.swift in Sources */,
@@ -305,6 +324,7 @@
 				9625F9AF212ACD59004842A0 /* DrinkViewController.swift in Sources */,
 				966D316E2126B090002D467D /* EnterNamesViewController.swift in Sources */,
 				9625F9B1212ACD67004842A0 /* EndViewController.swift in Sources */,
+				96D5659921D7F3B200D646C0 /* StartButton.swift in Sources */,
 				966D316C2126B090002D467D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

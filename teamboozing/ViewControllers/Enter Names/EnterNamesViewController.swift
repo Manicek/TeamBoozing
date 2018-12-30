@@ -11,14 +11,19 @@ import SnapKit
 
 class EnterNamesViewController: UIViewController {
     
-    private let tableView = UITableView()
+    private let minimumPlayerLabel = UILabel()
+    private let startButton = StartButton()
     private let nameTextField = UITextField()
-    private let continueButton = ContinueButton()
+    private let tableView = UITableView()
+    private let tableViewManager = EnterNamesTableViewManager()
     
-    private var players = [Player(name: "Prvni"), Player(name: "Druhy"), Player(name: "Treti"), Player(name: "Ctvrty"), Player(name: "Paty")] //[Player]()
-
+    private let minimumPlayerCount = 4
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableViewManager.delegate = self
+        tableViewManager.tableView = tableView
         
         setupUI()
         addSubviewsAndSetupConstraints()
@@ -37,8 +42,8 @@ class EnterNamesViewController: UIViewController {
     }
     
     @objc func continueButtonTapped() {
-        Game.createTeamsFromPlayers(players)
-        navigationController?.pushViewController(TeamRostersViewController(), animated: true)
+        Game.createTeamsFromPlayers(tableViewManager.players)
+        navigationController?.setViewControllers([TeamsRosterViewController()], animated: true)
     }
 }
 
@@ -46,44 +51,24 @@ extension EnterNamesViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         addPlayer()
+        nameTextField.text = ""
         return false
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        return text.count + string.count - range.length < 20
+    }
 }
 
-extension EnterNamesViewController: UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PlayerTableViewCell.cellIdentifier, for: indexPath) as! PlayerTableViewCell
-        cell.configure(self, player: players[indexPath.row])
-        return cell
+extension EnterNamesViewController: EnterNamesTableViewManagerDelegate {
+    func playerCountChanged(_ count: Int) {
+        startButton.isHidden = count < 4
+        minimumPlayerLabel.isHidden = !startButton.isHidden
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.count
-    }
-}
-
-extension EnterNamesViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
-    }
-}
-
-extension EnterNamesViewController: PlayerTableViewCellDelegate {
-    
-    func deletePlayer(_ player: Player) {
-        var indexToDelete = -1
-        for index in 0..<players.count {
-            if players[index].name == player.name {
-                indexToDelete = index
-                break
-            }
-        }
-        if indexToDelete > -1 {
-            players.remove(at: indexToDelete)
-        }
-        checkPlayerCount()
-        tableView.reloadData()
+    func showUsedNameAlert() {
+        showBasicAlert(message: "Jméno už je zabrané, vyber jiné", title: "Sorry!")
     }
 }
 
@@ -91,36 +76,22 @@ private extension EnterNamesViewController {
     
     func addPlayer() {
         guard let name = nameTextField.text, !name.isEmpty else { return }
-        for player in players {
-            if player.name == name {
-                showBasicAlert(message: "Jméno už je zabrané, vyber jiné", title: "Sorry!")
-                return
-            }
-        }
-        players.append(Player(name: name))
-        checkPlayerCount()
-        nameTextField.text = ""
-        tableView.reloadData()
-    }
-    
-    func checkPlayerCount() {
-        continueButton.isEnabled = players.count > 3
+        tableViewManager.addPlayer(name: name)
     }
     
     func showReusePlayersAlert() {
         let reusePlayersAlert = UIAlertController(title: "Znovu!", message: "Chcete předvyplnit jména hráčů z minule?", preferredStyle: UIAlertControllerStyle.alert)
         
         let reuseAction = UIAlertAction(title: "Ano", style: .default) { (_) -> Void in
-            self.players = [Player]()
+            var previousPlayers = [Player]()
             for team in Game.teams {
                 for player in team.players {
-                    self.players.append(player)
+                    previousPlayers.append(player)
                 }
             }
-            self.checkPlayerCount()
-            self.tableView.reloadData()
+            self.tableViewManager.players = previousPlayers
         }
-        let cancelAction = UIAlertAction(title: "Ne", style: .cancel)
+        let cancelAction = UIAlertAction(title: "Ne", style: .default)
         
         reusePlayersAlert.addAction(reuseAction)
         reusePlayersAlert.addAction(cancelAction)
@@ -138,8 +109,11 @@ private extension EnterNamesViewController {
         recognizer.addTarget(self, action: #selector(tapRecognized))
         view.addGestureRecognizer(recognizer)
         
+        minimumPlayerLabel.font = .minimumPlayer
+        minimumPlayerLabel.text = "Minimální počet hráčů: \(minimumPlayerCount)"
+        
         nameTextField.delegate = self
-        nameTextField.placeholder = "Player name"
+        nameTextField.placeholder = "Jméno hráče"
         nameTextField.font = .nameEnter
         nameTextField.layer.cornerRadius = 8
         nameTextField.textAlignment = .center
@@ -147,40 +121,43 @@ private extension EnterNamesViewController {
         nameTextField.autocorrectionType = .no
         nameTextField.backgroundColor = .white
         
-        tableView.dataSource = self
-        tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
         tableView.register(PlayerTableViewCell.self, forCellReuseIdentifier: PlayerTableViewCell.cellIdentifier)
         
-        continueButton.isEnabled = false
-        continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
+        startButton.isHidden = true
+        startButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
     }
     
     func addSubviewsAndSetupConstraints() {
         view.addSubviews([
+            startButton,
+            minimumPlayerLabel,
             tableView,
-            nameTextField,
-            continueButton
+            nameTextField
             ])
+        
+        startButton.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(50)
+        }
+        
+        minimumPlayerLabel.snp.makeConstraints { (make) in
+            make.center.equalTo(startButton)
+        }
         
         nameTextField.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.75)
             make.height.equalTo(80)
-            make.top.equalTo(topLayoutGuide.snp.bottom)
+            make.top.equalTo(startButton.snp.bottom).offset(10)
         }
         
         tableView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.75)
             make.top.equalTo(nameTextField.snp.bottom).offset(10)
-            make.bottom.equalTo(continueButton.snp.top).offset(-10)
-        }
-        
-        continueButton.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(40)
+            make.bottom.equalToSuperview()
         }
     }
 }

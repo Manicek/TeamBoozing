@@ -1,5 +1,5 @@
 //
-//  TeamRostersViewController.swift
+//  TeamsRosterViewController.swift
 //  teamboozing
 //
 //  Created by Patrik Hora on 17/08/2018.
@@ -8,13 +8,18 @@
 
 import UIKit
 
-class TeamRostersViewController: UIViewController {
+class TeamsRosterViewController: UIViewController {
     
-    private let stackView = UIStackView()
     private let continueButton = ContinueButton()
+    private let tableView = UITableView()
+
+    private let tableViewManager = TeamsRosterTableViewManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableViewManager.tableView = tableView
+        tableViewManager.teams = Game.teams
         
         setupUI()
         addSubviewsAndSetupConstraints()
@@ -25,37 +30,25 @@ class TeamRostersViewController: UIViewController {
     }
 }
 
-private extension TeamRostersViewController {
+private extension TeamsRosterViewController {
     
     func setupUI() {
         view.backgroundColor = .background
-        
-        stackView.distribution = .equalSpacing
-        stackView.alignment = .center
-        stackView.axis = .vertical
-
-        for team in Game.teams {
-            let teamView = TeamView(team: team)
-            stackView.addArrangedSubview(teamView)
-            teamView.snp.makeConstraints { (make) in
-                make.width.equalToSuperview()
-                make.height.equalTo(135)
-            }
-        }
         
         continueButton.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
     }
     
     func addSubviewsAndSetupConstraints() {
         view.addSubviews([
-            stackView,
+            tableView,
             continueButton
             ])
     
-        stackView.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
+        tableView.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
-            make.height.equalTo(Game.teams.count * 140)
+            make.top.equalToSuperview().offset(50)
+            make.bottom.equalTo(continueButton.snp.top).offset(-10)
         }
         
         continueButton.snp.makeConstraints { (make) in

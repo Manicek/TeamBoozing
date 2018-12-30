@@ -41,14 +41,12 @@ class Game {
     
     static func restart() {
         let vc = EnterNamesViewController()
-        navigationController.setNavigationBarHidden(false, animated: false)
         navigationController.setViewControllers([vc], animated: true)
     }
     
     static func start() {
         currentTeamIndex = 0
         orderedQuestions = Question.allQuestions.shuffled()
-        navigationController.setNavigationBarHidden(true, animated: false)
         showNextQuestion()
     }
     

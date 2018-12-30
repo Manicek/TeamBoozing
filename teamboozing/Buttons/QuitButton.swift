@@ -10,7 +10,7 @@ import UIKit
 
 class QuitButton: UIButton {
     
-    static let size = 70
+    static let size: CGFloat = 70
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: QuitButton.size, height: QuitButton.size)
