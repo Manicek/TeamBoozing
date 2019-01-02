@@ -157,7 +157,7 @@ private extension EnterNamesViewController {
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.75)
             make.top.equalTo(nameTextField.snp.bottom).offset(10)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().inset(10)
         }
     }
 }

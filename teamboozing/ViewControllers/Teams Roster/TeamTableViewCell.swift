@@ -33,7 +33,7 @@ class TeamTableViewCell: UITableViewCell {
         
         containerView.snp.makeConstraints { (make) in
             make.center.width.equalToSuperview()
-            make.top.bottom.equalToSuperview().inset(20)
+            make.top.bottom.equalToSuperview().inset(10)
         }
         
         membersLabel.snp.makeConstraints { (make) in

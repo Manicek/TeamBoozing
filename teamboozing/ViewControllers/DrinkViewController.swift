@@ -21,7 +21,7 @@ class DrinkViewController: UIViewController {
     init(team: Team, difficulty: Int) {
         super.init(nibName: nil, bundle: nil)
         
-        drinkCount = (team.players.count * difficulty) + (Game.drunkCoefficient * Int.randomBetween(1, 3))
+        drinkCount = (team.players.count * difficulty) + Int.randomBetween(1, 7)
         team.drinks += drinkCount
         membersLabel.fillWithPlayers(team.players)
         view.backgroundColor = team.color
@@ -80,7 +80,7 @@ private extension DrinkViewController {
         
         imageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.left.equalTo(view.snp.centerX).offset(20)
+            make.left.equalTo(view.snp.centerX).offset(10)
             make.size.equalTo(DrinkButton.size)
             
         }

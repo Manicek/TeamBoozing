@@ -10,6 +10,7 @@ import UIKit
 
 class EndViewController: UIViewController {
 
+    private let centeringView = UIView()
     private let stackView = UIStackView()
     private let completedButton = CompletedButton()
     
@@ -33,12 +34,12 @@ private extension EndViewController {
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.alignment = .center
+        stackView.spacing = 10
         
         for team in Game.teams {
             let teamResultView = TeamResultView(team: team)
             stackView.addArrangedSubview(teamResultView)
             teamResultView.snp.makeConstraints { (make) in
-                make.height.equalTo(80)
                 make.width.equalToSuperview()
             }
         }
@@ -47,20 +48,25 @@ private extension EndViewController {
     }
     
     func addSubviewsAndSetupConstraints() {
-        view.addSubviews([
+        view.addSubview(centeringView)
+        
+        centeringView.addSubviews([
             stackView,
             completedButton
             ])
+        
+        centeringView.snp.makeConstraints { (make) in
+            make.width.equalToSuperview().multipliedBy(0.8)
+            make.center.equalToSuperview()
+        }
 
         stackView.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.8)
-            make.height.equalTo(Game.teams.count * 100)
+            make.centerX.top.width.equalToSuperview()
         }
         
         completedButton.snp.makeConstraints { (make) in
             make.top.equalTo(stackView.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
+            make.centerX.bottom.equalToSuperview()
         }
     }
 }
@@ -89,8 +95,9 @@ class TeamResultView: UIView {
         
         imageView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.left.equalTo(self.snp.centerX).offset(20)
+            make.left.equalTo(self.snp.centerX).offset(10)
             make.size.equalTo(DrinkButton.size)
+            make.top.bottom.equalToSuperview().inset(10)
         }
         
         drinkCountLabel.snp.makeConstraints { (make) in

@@ -13,7 +13,6 @@ class Game {
     private init() {}
     
     static let navigationController = UINavigationController(rootViewController: EnterNamesViewController())
-    static let drunkCoefficient = 2
     
     private(set) static var teams = [Team]()
     private static var currentTeamIndex = -1
