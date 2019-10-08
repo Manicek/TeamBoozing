@@ -84,15 +84,15 @@ extension String {
         subString: String
         ) -> NSMutableAttributedString {
         
-        var defaultAttributes: [NSAttributedStringKey : Any] = [:]
-        var highlightedAttributes: [NSAttributedStringKey : Any] = [:]
+        var defaultAttributes: [NSAttributedString.Key : Any] = [:]
+        var highlightedAttributes: [NSAttributedString.Key : Any] = [:]
         
-        defaultAttributes.updateValue(UIColor.black, forKey: NSAttributedStringKey.foregroundColor)
+        defaultAttributes.updateValue(UIColor.black, forKey: NSAttributedString.Key.foregroundColor)
         
-        highlightedAttributes.updateValue(UIFont.questionHighlighted, forKey: NSAttributedStringKey.font)
-        highlightedAttributes.updateValue(UIColor.white, forKey: NSAttributedStringKey.foregroundColor)
-        highlightedAttributes.updateValue(UIColor.black, forKey: NSAttributedStringKey.strokeColor)
-        highlightedAttributes.updateValue(-3, forKey: NSAttributedStringKey.strokeWidth)
+        highlightedAttributes.updateValue(UIFont.questionHighlighted, forKey: NSAttributedString.Key.font)
+        highlightedAttributes.updateValue(UIColor.white, forKey: NSAttributedString.Key.foregroundColor)
+        highlightedAttributes.updateValue(UIColor.black, forKey: NSAttributedString.Key.strokeColor)
+        highlightedAttributes.updateValue(-3, forKey: NSAttributedString.Key.strokeWidth)
         
         let textAttributedString = NSMutableAttributedString (
             string: string,

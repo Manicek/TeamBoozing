@@ -42,7 +42,7 @@ class Question {
     }
     
     static var allQuestions: [Question] {
-        return /*originalQuestions +*/ silvesterQuestions
+        return originalQuestions /*silvesterQuestions*/
     }
     
     // Thanks to Koty and https://conversationstartersworld.com/truth-dare-questions/?fbclid=IwAR0FwOKVWdzM1OlNtQAy3v9S2enIfQdSuXjQZPgJVSXNFJkWSQ9T88qkhTo for many of the questions below

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -42,7 +42,7 @@
 		9625F9B0212ACD67004842A0 /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 		9625F9B2212AE51F004842A0 /* CompletedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedButton.swift; sourceTree = "<group>"; };
 		9634119521D6A85D00103A95 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		966D31682126B090002D467D /* teamboozing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teamboozing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		966D31682126B090002D467D /* Teamboozing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teamboozing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966D316B2126B090002D467D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		966D316D2126B090002D467D /* EnterNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNamesViewController.swift; sourceTree = "<group>"; };
 		966D31722126B091002D467D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		966D31692126B090002D467D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				966D31682126B090002D467D /* teamboozing.app */,
+				966D31682126B090002D467D /* Teamboozing.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,9 +194,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		966D31672126B090002D467D /* teamboozing */ = {
+		966D31672126B090002D467D /* Teamboozing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 966D317A2126B091002D467D /* Build configuration list for PBXNativeTarget "teamboozing" */;
+			buildConfigurationList = 966D317A2126B091002D467D /* Build configuration list for PBXNativeTarget "Teamboozing" */;
 			buildPhases = (
 				B2FAE5F3C668D3EA0472BAE3 /* [CP] Check Pods Manifest.lock */,
 				966D31642126B090002D467D /* Sources */,
@@ -208,9 +208,9 @@
 			);
 			dependencies = (
 			);
-			name = teamboozing;
+			name = Teamboozing;
 			productName = teamboozing;
-			productReference = 966D31682126B090002D467D /* teamboozing.app */;
+			productReference = 966D31682126B090002D467D /* Teamboozing.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -221,15 +221,15 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = MasterApp;
+				ORGANIZATIONNAME = Manicek;
 				TargetAttributes = {
 					966D31672126B090002D467D = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 966D31632126B090002D467D /* Build configuration list for PBXProject "teamboozing" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = 966D31632126B090002D467D /* Build configuration list for PBXProject "Teamboozing" */;
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -241,7 +241,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				966D31672126B090002D467D /* teamboozing */,
+				966D31672126B090002D467D /* Teamboozing */,
 			);
 		};
 /* End PBXProject section */
@@ -264,17 +264,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-teamboozing/Pods-teamboozing-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-teamboozing/Pods-teamboozing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-teamboozing/Pods-teamboozing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-teamboozing/Pods-teamboozing-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-teamboozing/Pods-teamboozing-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B2FAE5F3C668D3EA0472BAE3 /* [CP] Check Pods Manifest.lock */ = {
@@ -463,16 +462,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3633RW6LYQ;
+				DEVELOPMENT_TEAM = K9FJPTJYHK;
 				INFOPLIST_FILE = teamboozing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cz.master.teamboozing;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.manicek.teamboozing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -483,16 +482,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3633RW6LYQ;
+				DEVELOPMENT_TEAM = K9FJPTJYHK;
 				INFOPLIST_FILE = teamboozing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cz.master.teamboozing;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.manicek.teamboozing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -500,7 +499,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		966D31632126B090002D467D /* Build configuration list for PBXProject "teamboozing" */ = {
+		966D31632126B090002D467D /* Build configuration list for PBXProject "Teamboozing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				966D31782126B091002D467D /* Debug */,
@@ -509,7 +508,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		966D317A2126B091002D467D /* Build configuration list for PBXNativeTarget "teamboozing" */ = {
+		966D317A2126B091002D467D /* Build configuration list for PBXNativeTarget "Teamboozing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				966D317B2126B091002D467D /* Debug */,

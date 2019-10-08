@@ -83,7 +83,7 @@ class Game {
     }
     
     static func showEndAlert(from vc: UIViewController) {
-        let clearAlert = UIAlertController(title: "Konec", message: "Jste si jistí?", preferredStyle: UIAlertControllerStyle.alert)
+        let clearAlert = UIAlertController(title: "Konec", message: "Jste si jistí?", preferredStyle: UIAlertController.Style.alert)
         
         let endAction = UIAlertAction(title: "Ukončit hru", style: .destructive) { (_) in
             

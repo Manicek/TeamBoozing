@@ -80,7 +80,7 @@ private extension EnterNamesViewController {
     }
     
     func showReusePlayersAlert() {
-        let reusePlayersAlert = UIAlertController(title: "Znovu!", message: "Chcete předvyplnit jména hráčů z minule?", preferredStyle: UIAlertControllerStyle.alert)
+        let reusePlayersAlert = UIAlertController(title: "Znovu!", message: "Chcete předvyplnit jména hráčů z minule?", preferredStyle: UIAlertController.Style.alert)
         
         let reuseAction = UIAlertAction(title: "Ano", style: .default) { (_) -> Void in
             var previousPlayers = [Player]()
