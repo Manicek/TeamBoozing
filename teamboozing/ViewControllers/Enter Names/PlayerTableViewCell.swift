@@ -37,7 +37,7 @@ class PlayerTableViewCell: UITableViewCell {
         playerNameLabel.textAlignment = .center
         playerNameLabel.font = .playerCell
         
-        deleteButton.setImage(#imageLiteral(resourceName: "delete"), for: .normal)
+        deleteButton.setImage(UIImage.delete, for: .normal)
         deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         
         contentView.addSubviews([

@@ -42,7 +42,7 @@ class Question {
     }
     
     static var allQuestions: [Question] {
-        return originalQuestions /*silvesterQuestions*/
+        return originalQuestions + silvesterQuestions
     }
     
     // Thanks to Koty and https://conversationstartersworld.com/truth-dare-questions/?fbclid=IwAR0FwOKVWdzM1OlNtQAy3v9S2enIfQdSuXjQZPgJVSXNFJkWSQ9T88qkhTo for many of the questions below
@@ -52,7 +52,7 @@ class Question {
         Question("popiš detailně fotku, na které vypadáš nejtrapněji"),
         Question("přiznej svůj netrapnější zlozvyk"),
         Question("popiš svůj nejdivočejší zážitek s policií"),
-        Question("čeho nebo se nejvíce bojíš?"),
+        Question("čeho nebo koho se nejvíce bojíš?"),
         Question("popiš nevhodnou situaci, ve které sis prdnul/a"),
         Question("proč ses rozešel/rozešla s předchozím přítelem?"),
         Question("kdo z hráčů je nejvíce sexy? A kdo je druhý a třetí nejvíce sexy?"),
@@ -76,7 +76,7 @@ class Question {
         Question("otáčej kolem sebe 30 sekund imaginarní hula hop"),
         Question("běž na záchod, sundej si trenky/kalhotky a nos je na hlavě až do konce hry", difficulty: 6),
         Question("sněz 15 SECALO do 30 sekund, bez zapíjení"),
-        Question("sundej si tričko", difficulty: 5),
+        Question("sundej si vršek oblečení a do konce hry tak zůstaň", difficulty: 5),
         Question("dej si panáka něčeho alespoň 40%", difficulty: 3),
         Question("řekni, který z mužských hráčů má podle tebe nejmenší penis"),
         Question("udělej 5 kliků"),
@@ -86,7 +86,7 @@ class Question {
         Question("chovej se 30 sekund jako zvíře, které vybere <SOUPER>", needsOpponent: true),
         Question("slož krátkou báseň na základě tří slov, které vybere <SOUPER>", needsOpponent: true),
         Question("nech <SOUPER>, aby ti napráskal/a na zadek", difficulty: 3, needsOpponent: true),
-        Question("postni na Facebook fotku dle svého výběru z pěti fotek které ti nafotí <SOUPER> na tvůj telefon", difficulty: 3, needsOpponent: true),
+        Question("postni na Facebook fotku dle svého výběru ze tří fotek které ti nafotí <SOUPER> na tvůj telefon", difficulty: 3, needsOpponent: true),
         Question("prodej <SOUPER> nějakou sračku, použij k tomu své nejlepší prodejní schopnosti", needsOpponent: true),
         Question("tanči na písničku, kterou vybere <SOUPER>, jako by na tom závisel tvůj život", difficulty: 3, needsOpponent: true),
         Question("má <SOUPER> radši vodku nebo rum?", needsOpponent: true),

@@ -43,7 +43,7 @@ class Game {
         navigationController.setViewControllers([vc], animated: true)
     }
     
-    static func start() {
+    static func start(questions: [Question]) {
         currentTeamIndex = 0
         orderedQuestions = Question.allQuestions.shuffled()
         showNextQuestion()

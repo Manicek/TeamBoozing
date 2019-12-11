@@ -27,7 +27,7 @@ class TeamsRosterViewController: UIViewController {
     }
     
     @objc func continueButtonTapped() {
-        Game.start()
+        Game.start(questions: Question.allQuestions)
     }
 }
 

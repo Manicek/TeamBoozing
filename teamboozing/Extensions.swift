@@ -114,3 +114,9 @@ extension UIDevice {
         return UIDevice.current.userInterfaceIdiom == .pad
     }
 }
+
+extension UIImage {
+    static var beer = UIImage(named: "beer")
+    static var completed = UIImage(named: "completed")
+    static var delete = UIImage(named: "delete")
+}

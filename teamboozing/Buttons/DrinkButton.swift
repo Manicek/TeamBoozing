@@ -20,7 +20,7 @@ class DrinkButton: UIButton {
     init(team: Team? = nil) {
         super.init(frame: .zero)
         
-        setImage(#imageLiteral(resourceName: "beer"), for: .normal)
+        setImage(UIImage.beer, for: .normal)
         
         self.team = team
         if let color = team?.color {

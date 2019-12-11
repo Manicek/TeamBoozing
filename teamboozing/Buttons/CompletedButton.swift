@@ -19,7 +19,7 @@ class CompletedButton: UIButton {
     init() {
         super.init(frame: .zero)
         
-        setImage(#imageLiteral(resourceName: "completed"), for: .normal)
+        setImage(UIImage.completed, for: .normal)
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }

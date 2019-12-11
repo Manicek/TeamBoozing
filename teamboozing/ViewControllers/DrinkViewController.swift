@@ -48,7 +48,7 @@ class DrinkViewController: UIViewController {
 private extension DrinkViewController {
     
     func setupUI() {
-        imageView.image = #imageLiteral(resourceName: "beer")
+        imageView.image = UIImage.beer
         
         drinkCountLabel.font = .drinkCount
         drinkCountLabel.text = "\(drinkCount) x"

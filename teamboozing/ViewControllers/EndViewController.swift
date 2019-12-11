@@ -80,7 +80,7 @@ class TeamResultView: UIView {
     init(team: Team) {
         super.init(frame: .zero)
         
-        imageView.image = #imageLiteral(resourceName: "beer")
+        imageView.image = UIImage.beer
         
         backgroundColor = team.color
         layer.cornerRadius = 10
