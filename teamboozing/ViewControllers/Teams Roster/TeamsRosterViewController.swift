@@ -27,7 +27,7 @@ class TeamsRosterViewController: UIViewController {
     }
     
     @objc func continueButtonTapped() {
-        Game.start(questions: Question.allQuestions)
+        navigationController?.setViewControllers([QuestionSetPickingViewController()], animated: true)
     }
 }
 

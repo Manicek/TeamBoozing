@@ -11,6 +11,7 @@ import UIKit
 extension UIFont {
     static var questionDefault = font(32)
     static var questionHighlighted = font(40)
+    static var questionSet = font(24)
     static var membersSmall = font(24)
     static var membersLarge = font(28)
     static var minimumPlayer = font(24)

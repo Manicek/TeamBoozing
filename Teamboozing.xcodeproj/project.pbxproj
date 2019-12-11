@@ -34,6 +34,10 @@
 		96D5659721D799EA00D646C0 /* EnterNamesTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D5659621D799EA00D646C0 /* EnterNamesTableViewManager.swift */; };
 		96D5659921D7F3B200D646C0 /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D5659821D7F3B200D646C0 /* StartButton.swift */; };
 		96D7DEEA21D8D3960022901A /* TeamsRosterTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D7DEE921D8D3960022901A /* TeamsRosterTableViewManager.swift */; };
+		FF753EEE23A11792003841A4 /* QuestionSetPickingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753EED23A11792003841A4 /* QuestionSetPickingViewController.swift */; };
+		FF753EF123A117F0003841A4 /* QuestionSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753EF023A117F0003841A4 /* QuestionSetTableViewCell.swift */; };
+		FF753EF323A118B9003841A4 /* QuestionSetTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753EF223A118B9003841A4 /* QuestionSetTableViewManager.swift */; };
+		FF753EF523A11A4A003841A4 /* QuestionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753EF423A11A4A003841A4 /* QuestionSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		96D7DEE921D8D3960022901A /* TeamsRosterTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRosterTableViewManager.swift; sourceTree = "<group>"; };
 		AC89E379B44A01E3E0DDCD5F /* Pods-teamboozing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teamboozing.release.xcconfig"; path = "Pods/Target Support Files/Pods-teamboozing/Pods-teamboozing.release.xcconfig"; sourceTree = "<group>"; };
 		B8E12F456E42B1EC0048639C /* Pods-teamboozing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teamboozing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-teamboozing/Pods-teamboozing.debug.xcconfig"; sourceTree = "<group>"; };
+		FF753EED23A11792003841A4 /* QuestionSetPickingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSetPickingViewController.swift; sourceTree = "<group>"; };
+		FF753EF023A117F0003841A4 /* QuestionSetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSetTableViewCell.swift; sourceTree = "<group>"; };
+		FF753EF223A118B9003841A4 /* QuestionSetTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSetTableViewManager.swift; sourceTree = "<group>"; };
+		FF753EF423A11A4A003841A4 /* QuestionSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,7 @@
 				966D31832126B6D8002D467D /* Extensions.swift */,
 				966D319D21270952002D467D /* Question.swift */,
 				9634119521D6A85D00103A95 /* Fonts.swift */,
+				FF753EF423A11A4A003841A4 /* QuestionSet.swift */,
 			);
 			path = teamboozing;
 			sourceTree = "<group>";
@@ -132,6 +141,7 @@
 		966D31852126BE7E002D467D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FF753EEF23A117D6003841A4 /* QuestionSetPickingViewController */,
 				96D7DEE821D8D2700022901A /* Teams Roster */,
 				96D5659521D799CC00D646C0 /* Enter Names */,
 				966D3192212703C0002D467D /* TeamQuestionViewController.swift */,
@@ -189,6 +199,16 @@
 				7403D487632374F464BEA402 /* Pods_teamboozing.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF753EEF23A117D6003841A4 /* QuestionSetPickingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FF753EED23A11792003841A4 /* QuestionSetPickingViewController.swift */,
+				FF753EF023A117F0003841A4 /* QuestionSetTableViewCell.swift */,
+				FF753EF223A118B9003841A4 /* QuestionSetTableViewManager.swift */,
+			);
+			path = QuestionSetPickingViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +329,7 @@
 				9625F9B3212AE51F004842A0 /* CompletedButton.swift in Sources */,
 				96D5659721D799EA00D646C0 /* EnterNamesTableViewManager.swift in Sources */,
 				966D318C2126F88E002D467D /* TeamTableViewCell.swift in Sources */,
+				FF753EF523A11A4A003841A4 /* QuestionSet.swift in Sources */,
 				9634119621D6A85D00103A95 /* Fonts.swift in Sources */,
 				966D31842126B6D8002D467D /* Extensions.swift in Sources */,
 				966D31972127040D002D467D /* QuitButton.swift in Sources */,
@@ -321,9 +342,12 @@
 				966D319A212704FD002D467D /* QuestionLabel.swift in Sources */,
 				966D317E2126B47B002D467D /* Team.swift in Sources */,
 				9625F9AF212ACD59004842A0 /* DrinkViewController.swift in Sources */,
+				FF753EF123A117F0003841A4 /* QuestionSetTableViewCell.swift in Sources */,
 				966D316E2126B090002D467D /* EnterNamesViewController.swift in Sources */,
 				9625F9B1212ACD67004842A0 /* EndViewController.swift in Sources */,
+				FF753EEE23A11792003841A4 /* QuestionSetPickingViewController.swift in Sources */,
 				96D5659921D7F3B200D646C0 /* StartButton.swift in Sources */,
+				FF753EF323A118B9003841A4 /* QuestionSetTableViewManager.swift in Sources */,
 				966D316C2126B090002D467D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

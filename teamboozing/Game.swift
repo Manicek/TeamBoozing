@@ -15,6 +15,7 @@ class Game {
     static let navigationController = UINavigationController(rootViewController: EnterNamesViewController())
     
     private(set) static var teams = [Team]()
+    private(set) static var questionSetsNames = [String]()
     private static var currentTeamIndex = -1
     private static var orderedQuestions = [Question]()
     
@@ -45,7 +46,7 @@ class Game {
     
     static func start(questions: [Question]) {
         currentTeamIndex = 0
-        orderedQuestions = Question.allQuestions.shuffled()
+        orderedQuestions = questions.shuffled()
         showNextQuestion()
     }
     
