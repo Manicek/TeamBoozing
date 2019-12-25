@@ -22,6 +22,8 @@ class EnterNamesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         tableViewManager.delegate = self
         tableViewManager.tableView = tableView
         
@@ -43,7 +45,7 @@ class EnterNamesViewController: UIViewController {
     
     @objc func continueButtonTapped() {
         Game.createTeamsFromPlayers(tableViewManager.players)
-        navigationController?.setViewControllers([TeamsRosterViewController()], animated: true)
+        navigationController?.pushViewController(TeamsRosterViewController(), animated: true)
     }
 }
 
@@ -139,7 +141,7 @@ private extension EnterNamesViewController {
         
         startButton.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(50)
+            make.top.equalTo(topLayoutGuide.snp.bottom)
         }
         
         minimumPlayerLabel.snp.makeConstraints { (make) in

@@ -18,6 +18,8 @@ class TeamsRosterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         tableViewManager.tableView = tableView
         tableViewManager.teams = Game.teams
@@ -27,7 +29,7 @@ class TeamsRosterViewController: UIViewController {
     }
     
     @objc func continueButtonTapped() {
-        navigationController?.setViewControllers([QuestionSetPickingViewController()], animated: true)
+        navigationController?.pushViewController(QuestionSetPickingViewController(), animated: true)
     }
 }
 

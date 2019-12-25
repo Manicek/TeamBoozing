@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        Game.navigationController.setNavigationBarHidden(true, animated: false)
+        Game.navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        Game.navigationController.navigationBar.shadowImage = UIImage()
+        Game.navigationController.navigationBar.isTranslucent = true
         window?.rootViewController = Game.navigationController
         window?.makeKeyAndVisible()
 

@@ -45,6 +45,7 @@ class Game {
     }
     
     static func start(questions: [Question]) {
+        navigationController.setNavigationBarHidden(true, animated: false)
         currentTeamIndex = 0
         orderedQuestions = questions.shuffled()
         showNextQuestion()
@@ -99,6 +100,7 @@ class Game {
     }
     
     private static func end() {
+        navigationController.setNavigationBarHidden(true, animated: false)
         let vc = EndViewController()
         navigationController.setViewControllers([vc], animated: true)
     }
