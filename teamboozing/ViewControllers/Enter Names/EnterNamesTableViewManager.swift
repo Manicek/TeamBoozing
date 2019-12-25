@@ -46,7 +46,7 @@ class EnterNamesTableViewManager: NSObject {
                 return
             }
         }
-        players.append(Player(name: name))
+        players.insert(Player(name: name), at: 0)
         delegate?.playerCountChanged(players.count)
         tableView.reloadData()
     }
