@@ -84,6 +84,13 @@ class Game {
         }
     }
     
+    static func drinksForPosition(team: Team) -> Int {
+        let orderedTeams = teams.sorted { (team1, team2) -> Bool in
+            return team1.drinks > team2.drinks
+        }
+        return (orderedTeams.firstIndex(of: team) ?? 0)
+    }
+    
     static func showEndAlert(from vc: UIViewController) {
         let clearAlert = UIAlertController(title: "Konec", message: "Jste si jistí?", preferredStyle: UIAlertController.Style.alert)
         

@@ -21,7 +21,7 @@ class DrinkViewController: UIViewController {
     init(team: Team, difficulty: Int) {
         super.init(nibName: nil, bundle: nil)
         
-        drinkCount = (team.players.count * difficulty) + Int.randomBetween(1, 7)
+        drinkCount = team.players.count * (difficulty + Game.drinksForPosition(team: team)) + Int.randomBetween(1, 4)
         team.drinks += drinkCount
         membersLabel.fillWithPlayers(team.players)
         view.backgroundColor = team.color
