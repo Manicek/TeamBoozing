@@ -8,8 +8,9 @@
 
 import Foundation
 
-class QuestionSet {
-    static let allQuestionSets = [original, firstSilvester]
+class QuestionSet: NSObject, NSCoding {
+    
+    static var allQuestionSets = [original, firstSilvester]
     
     let name: String
     let questions: [Question]
@@ -18,11 +19,24 @@ class QuestionSet {
         self.name = name
         self.questions = questions
     }
+    
+    // MARK: NSCoding
+    private static let nameKey = "name"
+    private static let questionsKey = "questions"
+    
+    required init?(coder: NSCoder) {
+        self.name = coder.decodeObject(forKey: QuestionSet.nameKey) as? String ?? "ErrorName"
+        self.questions = coder.decodeObject(forKey: QuestionSet.questionsKey) as? [Question] ?? []
+    }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(name, forKey: QuestionSet.nameKey)
+        coder.encode(questions, forKey: QuestionSet.questionsKey)
+    }
 }
 
-
-fileprivate var firstSilvester = QuestionSet(name: "První Silvester", questions: firstSilvesterQuestions)
-fileprivate var original = QuestionSet(name: "Původní", questions: originalQuestions)
+fileprivate let firstSilvester = QuestionSet(name: "První Silvester", questions: firstSilvesterQuestions)
+fileprivate let original = QuestionSet(name: "Původní", questions: originalQuestions)
 
 // Thanks to Koty and https://conversationstartersworld.com/truth-dare-questions/?fbclid=IwAR0FwOKVWdzM1OlNtQAy3v9S2enIfQdSuXjQZPgJVSXNFJkWSQ9T88qkhTo for many of the questions below
 fileprivate let firstSilvesterQuestions = [

@@ -8,17 +8,17 @@
 
 import Foundation
 
-enum QuestionType {
+enum QuestionType: String {
     case single
     case all
 }
 
-class Question {
+class Question: NSObject, NSCoding {
     
-    let needsOpponent: Bool
     private let questionText: String
-    let type: QuestionType
     let difficulty: Int
+    let needsOpponent: Bool
+    let type: QuestionType
     
     init(_ text: String, difficulty: Int = 2, needsOpponent: Bool = false, type: QuestionType = .single) {
         self.questionText = text
@@ -41,4 +41,23 @@ class Question {
         return String.stringWithHighlightedSubString(string: textWithPlayer, subString: player.name)
     }
     
+    // MARK: NSCoding
+    private static let questionTextKey = "questionText"
+    private static let needsOpponentKey = "needsOpponent"
+    private static let difficultyKey = "difficulty"
+    private static let typeKey = "type"
+    
+    required init?(coder: NSCoder) {
+        self.questionText = coder.decodeObject(forKey: Question.questionTextKey) as? String ?? "ErrorText"
+        self.difficulty = coder.decodeObject(forKey: Question.difficultyKey) as? Int ?? 2
+        self.needsOpponent = coder.decodeObject(forKey: Question.needsOpponentKey) as? Bool ?? false
+        self.type = QuestionType(rawValue: coder.decodeObject(forKey: Question.typeKey) as? String ?? "single") ?? .single
+    }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(questionText, forKey: Question.questionTextKey)
+        coder.encode(difficulty, forKey: Question.difficultyKey)
+        coder.encode(needsOpponent, forKey: Question.needsOpponentKey)
+        coder.encode(type.rawValue, forKey: Question.typeKey)
+    }
 }
