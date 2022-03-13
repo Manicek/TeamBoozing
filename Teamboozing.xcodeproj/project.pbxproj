@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		784021798B4FF69D684F4300 /* Pods_teamboozing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7403D487632374F464BEA402 /* Pods_teamboozing.framework */; };
 		9625F9AF212ACD59004842A0 /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625F9AE212ACD59004842A0 /* DrinkViewController.swift */; };
 		9625F9B1212ACD67004842A0 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625F9B0212ACD67004842A0 /* EndViewController.swift */; };
 		9625F9B3212AE51F004842A0 /* CompletedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625F9B2212AE51F004842A0 /* CompletedButton.swift */; };
@@ -38,15 +37,14 @@
 		FF753EF123A117F0003841A4 /* QuestionSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753EF023A117F0003841A4 /* QuestionSetTableViewCell.swift */; };
 		FF753EF323A118B9003841A4 /* QuestionSetTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753EF223A118B9003841A4 /* QuestionSetTableViewManager.swift */; };
 		FF753EF523A11A4A003841A4 /* QuestionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF753EF423A11A4A003841A4 /* QuestionSet.swift */; };
+		FFE9EC1C27DE4F0C00870BBA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFE9EC1B27DE4F0C00870BBA /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7403D487632374F464BEA402 /* Pods_teamboozing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_teamboozing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9625F9AE212ACD59004842A0 /* DrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
 		9625F9B0212ACD67004842A0 /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 		9625F9B2212AE51F004842A0 /* CompletedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedButton.swift; sourceTree = "<group>"; };
 		9634119521D6A85D00103A95 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		966D31682126B090002D467D /* Teamboozing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teamboozing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966D316B2126B090002D467D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		966D316D2126B090002D467D /* EnterNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNamesViewController.swift; sourceTree = "<group>"; };
 		966D31722126B091002D467D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,12 +68,11 @@
 		96D5659621D799EA00D646C0 /* EnterNamesTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNamesTableViewManager.swift; sourceTree = "<group>"; };
 		96D5659821D7F3B200D646C0 /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
 		96D7DEE921D8D3960022901A /* TeamsRosterTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRosterTableViewManager.swift; sourceTree = "<group>"; };
-		AC89E379B44A01E3E0DDCD5F /* Pods-teamboozing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teamboozing.release.xcconfig"; path = "Pods/Target Support Files/Pods-teamboozing/Pods-teamboozing.release.xcconfig"; sourceTree = "<group>"; };
-		B8E12F456E42B1EC0048639C /* Pods-teamboozing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-teamboozing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-teamboozing/Pods-teamboozing.debug.xcconfig"; sourceTree = "<group>"; };
 		FF753EED23A11792003841A4 /* QuestionSetPickingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSetPickingViewController.swift; sourceTree = "<group>"; };
 		FF753EF023A117F0003841A4 /* QuestionSetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSetTableViewCell.swift; sourceTree = "<group>"; };
 		FF753EF223A118B9003841A4 /* QuestionSetTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSetTableViewManager.swift; sourceTree = "<group>"; };
 		FF753EF423A11A4A003841A4 /* QuestionSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSet.swift; sourceTree = "<group>"; };
+		FFE9EC1727DE4DB700870BBA /* Teamboozing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teamboozing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,38 +80,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				784021798B4FF69D684F4300 /* Pods_teamboozing.framework in Frameworks */,
+				FFE9EC1C27DE4F0C00870BBA /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		72F5AB5536DB36BA19101522 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B8E12F456E42B1EC0048639C /* Pods-teamboozing.debug.xcconfig */,
-				AC89E379B44A01E3E0DDCD5F /* Pods-teamboozing.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		966D315F2126B090002D467D = {
 			isa = PBXGroup;
 			children = (
 				966D316A2126B090002D467D /* teamboozing */,
-				966D31692126B090002D467D /* Products */,
-				72F5AB5536DB36BA19101522 /* Pods */,
-				B931C83D48B2FBC41F7F7564 /* Frameworks */,
+				FFE9EC1727DE4DB700870BBA /* Teamboozing.app */,
 			);
-			sourceTree = "<group>";
-		};
-		966D31692126B090002D467D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				966D31682126B090002D467D /* Teamboozing.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		966D316A2126B090002D467D /* teamboozing */ = {
@@ -193,14 +171,6 @@
 			path = "Teams Roster";
 			sourceTree = "<group>";
 		};
-		B931C83D48B2FBC41F7F7564 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7403D487632374F464BEA402 /* Pods_teamboozing.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		FF753EEF23A117D6003841A4 /* QuestionSetPickingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,19 +188,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 966D317A2126B091002D467D /* Build configuration list for PBXNativeTarget "Teamboozing" */;
 			buildPhases = (
-				B2FAE5F3C668D3EA0472BAE3 /* [CP] Check Pods Manifest.lock */,
 				966D31642126B090002D467D /* Sources */,
 				966D31652126B090002D467D /* Frameworks */,
 				966D31662126B090002D467D /* Resources */,
-				314D0389E23FA57882A5F6D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Teamboozing;
+			packageProductDependencies = (
+				FFE9EC1B27DE4F0C00870BBA /* SnapKit */,
+			);
 			productName = teamboozing;
-			productReference = 966D31682126B090002D467D /* Teamboozing.app */;
+			productReference = FFE9EC1727DE4DB700870BBA /* Teamboozing.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -240,7 +211,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = Manicek;
 				TargetAttributes = {
 					966D31672126B090002D467D = {
@@ -257,7 +228,10 @@
 				Base,
 			);
 			mainGroup = 966D315F2126B090002D467D;
-			productRefGroup = 966D31692126B090002D467D /* Products */;
+			packageReferences = (
+				FFE9EC1A27DE4F0C00870BBA /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = 966D315F2126B090002D467D;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -277,44 +251,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		314D0389E23FA57882A5F6D7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-teamboozing/Pods-teamboozing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-teamboozing/Pods-teamboozing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-teamboozing/Pods-teamboozing-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B2FAE5F3C668D3EA0472BAE3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-teamboozing-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		966D31642126B090002D467D /* Sources */ = {
@@ -392,6 +328,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -417,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -452,6 +389,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -471,7 +409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -482,13 +420,12 @@
 		};
 		966D317B2126B091002D467D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8E12F456E42B1EC0048639C /* Pods-teamboozing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K9FJPTJYHK;
+				DEVELOPMENT_TEAM = 692WP484NX;
 				INFOPLIST_FILE = teamboozing/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,13 +439,12 @@
 		};
 		966D317C2126B091002D467D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC89E379B44A01E3E0DDCD5F /* Pods-teamboozing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K9FJPTJYHK;
+				DEVELOPMENT_TEAM = 692WP484NX;
 				INFOPLIST_FILE = teamboozing/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -542,6 +478,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FFE9EC1A27DE4F0C00870BBA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FFE9EC1B27DE4F0C00870BBA /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFE9EC1A27DE4F0C00870BBA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 966D31602126B090002D467D /* Project object */;
 }

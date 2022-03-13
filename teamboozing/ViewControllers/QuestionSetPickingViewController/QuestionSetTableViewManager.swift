@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol QuestionSetTableViewManagerDelegate: class {
+protocol QuestionSetTableViewManagerDelegate: AnyObject {
     func questionSetSelected(_ set: QuestionSet)
 }
 
