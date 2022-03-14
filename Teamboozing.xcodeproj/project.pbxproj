@@ -98,10 +98,10 @@
 		966D316A2126B090002D467D /* teamboozing */ = {
 			isa = PBXGroup;
 			children = (
+				FFE9EC2027DEBD1100870BBA /* MainDelegates */,
 				966D3198212704F2002D467D /* Labels */,
 				966D318D2126FF7A002D467D /* Buttons */,
 				966D31852126BE7E002D467D /* ViewControllers */,
-				966D316B2126B090002D467D /* AppDelegate.swift */,
 				966D31722126B091002D467D /* Assets.xcassets */,
 				966D31742126B091002D467D /* LaunchScreen.storyboard */,
 				966D31772126B091002D467D /* Info.plist */,
@@ -179,6 +179,14 @@
 				FF753EF223A118B9003841A4 /* QuestionSetTableViewManager.swift */,
 			);
 			path = QuestionSetPickingViewController;
+			sourceTree = "<group>";
+		};
+		FFE9EC2027DEBD1100870BBA /* MainDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				966D316B2126B090002D467D /* AppDelegate.swift */,
+			);
+			path = MainDelegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

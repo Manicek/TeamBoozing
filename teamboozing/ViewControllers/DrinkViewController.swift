@@ -1,12 +1,11 @@
 //
 //  DrinkViewController.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 20/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
+
 
 class DrinkViewController: UIViewController {
     
@@ -21,7 +20,7 @@ class DrinkViewController: UIViewController {
     init(team: Team, difficulty: Int) {
         super.init(nibName: nil, bundle: nil)
         
-        drinkCount = team.players.count * (difficulty + Game.drinksForPosition(team: team)) + Int.randomBetween(1, 4)
+        drinkCount = team.players.count * (difficulty + Game.drinksForPosition(team: team)) + Int.random(in: 1...4)
         team.drinks += drinkCount
         membersLabel.fillWithPlayers(team.players)
         view.backgroundColor = team.color
@@ -34,16 +33,27 @@ class DrinkViewController: UIViewController {
         addSubviewsAndSetupConstraints()
     }
     
-    @objc func quitButtonTapped() {
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+}
+
+
+// MARK: - Actions
+
+private extension DrinkViewController {
+    
+    @objc
+    func quitButtonTapped() {
         Game.showEndAlert(from: self)
     }
     
-    @objc func continueButtonTapped() {
+    @objc
+    func continueButtonTapped() {
         Game.showNextQuestion()
     }
-    
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
+
+
+// MARK: - Private extension
 
 private extension DrinkViewController {
     
@@ -59,38 +69,39 @@ private extension DrinkViewController {
     }
     
     func addSubviewsAndSetupConstraints() {
-        view.addSubviews([
-            membersLabel,
-            quitButton,
-            imageView,
-            drinkCountLabel,
-            continueButton
-            ])
+        view.addSubviews(
+            [
+                membersLabel,
+                quitButton,
+                imageView,
+                drinkCountLabel,
+                continueButton
+            ]
+        )
         
-        quitButton.snp.makeConstraints { (make) in
-            make.top.equalTo(topLayoutGuide.snp.bottom)
+        quitButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.right.equalToSuperview().inset(20)
         }
         
-        membersLabel.snp.makeConstraints { (make) in
+        membersLabel.snp.makeConstraints { make in
             make.top.equalTo(quitButton.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
         }
         
-        imageView.snp.makeConstraints { (make) in
+        imageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalTo(view.snp.centerX).offset(10)
             make.size.equalTo(DrinkButton.size)
-            
         }
         
-        drinkCountLabel.snp.makeConstraints { (make) in
+        drinkCountLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.right.equalTo(imageView.snp.left).offset(-10)
         }
         
-        continueButton.snp.makeConstraints { (make) in
+        continueButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().inset(40)
         }

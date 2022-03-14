@@ -1,16 +1,21 @@
 //
 //  PlayerTableViewCell.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 17/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
 
-protocol PlayerTableViewCellDelegate: class {
+
+// MARK: - PlayerTableViewCellDelegate
+
+protocol PlayerTableViewCellDelegate: AnyObject {
+    
     func deletePlayer(_ player: Player)
 }
+
+
+// MARK: - PlayerTableViewCell
 
 class PlayerTableViewCell: UITableViewCell {
     
@@ -40,20 +45,22 @@ class PlayerTableViewCell: UITableViewCell {
         deleteButton.setImage(UIImage.delete, for: .normal)
         deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         
-        contentView.addSubviews([
-            playerNameLabel,
-            deleteButton
-            ])
+        contentView.addSubviews(
+            [
+                playerNameLabel,
+                deleteButton
+            ]
+        )
         
-        playerNameLabel.snp.makeConstraints { (make) in
+        playerNameLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.right.equalTo(deleteButton.snp.left)
         }
         
-        deleteButton.snp.makeConstraints { (make) in
+        deleteButton.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview().inset(6)
             make.right.centerY.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.75)
-            make.width.equalTo(deleteButton.snp.height)
+            make.size.equalTo(32)
         }
     }
     

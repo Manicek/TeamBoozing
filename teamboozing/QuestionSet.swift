@@ -1,12 +1,11 @@
 //
 //  QuestionSet.swift
-//  Teamboozing
 //
 //  Created by Patrik Hora on 11/12/2019.
-//  Copyright © 2019 Manicek. All rights reserved.
 //
 
 import Foundation
+
 
 class QuestionSet: NSObject, NSCoding {
     
@@ -20,7 +19,9 @@ class QuestionSet: NSObject, NSCoding {
         self.questions = questions
     }
     
+    
     // MARK: NSCoding
+    
     private static let nameKey = "name"
     private static let questionsKey = "questions"
     
@@ -35,11 +36,11 @@ class QuestionSet: NSObject, NSCoding {
     }
 }
 
-fileprivate let firstSilvester = QuestionSet(name: "První Silvester", questions: firstSilvesterQuestions)
-fileprivate let original = QuestionSet(name: "Původní", questions: originalQuestions)
+private let firstSilvester = QuestionSet(name: "První Silvester", questions: firstSilvesterQuestions)
+private let original = QuestionSet(name: "Původní", questions: originalQuestions)
 
 // Thanks to Koty and https://conversationstartersworld.com/truth-dare-questions/?fbclid=IwAR0FwOKVWdzM1OlNtQAy3v9S2enIfQdSuXjQZPgJVSXNFJkWSQ9T88qkhTo for many of the questions below
-fileprivate let firstSilvesterQuestions = [
+private let firstSilvesterQuestions = [
     Question("kdybys byl/a opačné sexuality, s kterým hráčem bys to chtěl/a dělat?"),
     Question("co nejdražšího jsi ukradl/a?"),
     Question("popiš detailně fotku, na které vypadáš nejtrapněji"),
@@ -94,7 +95,7 @@ fileprivate let firstSilvesterQuestions = [
     Question("Dej si facku!", type: .all)
 ]
 
-fileprivate let originalQuestions = [
+private let originalQuestions = [
     Question("jmenuj pět dobrých vlastností svého šéfa", difficulty: 3),
     Question("řekni své jméno pozpátku", difficulty: 1),
     Question("řekni třikrát za sebou správně jazykolam \"Pudl prdl pudr\"", difficulty: 1),

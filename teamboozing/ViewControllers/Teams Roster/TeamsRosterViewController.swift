@@ -1,12 +1,11 @@
 //
 //  TeamsRosterViewController.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 17/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
+
 
 class TeamsRosterViewController: UIViewController {
     
@@ -33,6 +32,9 @@ class TeamsRosterViewController: UIViewController {
     }
 }
 
+
+// MARK: - Private extension
+
 private extension TeamsRosterViewController {
     
     func setupUI() {
@@ -48,26 +50,28 @@ private extension TeamsRosterViewController {
     }
     
     func addSubviewsAndSetupConstraints() {
-        view.addSubviews([
-            judgeLabel,
-            tableView,
-            continueButton
-            ])
+        view.addSubviews(
+            [
+                judgeLabel,
+                tableView,
+                continueButton
+            ]
+        )
         
-        judgeLabel.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.width.equalToSuperview().inset(10)
-            make.top.equalToSuperview().offset(50)
+        judgeLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(50)
+            make.left.right.equalToSuperview().inset(10)
         }
     
-        tableView.snp.makeConstraints { (make) in
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(judgeLabel.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
-            make.top.equalTo(judgeLabel.snp.bottom).offset(10)
-            make.bottom.equalTo(continueButton.snp.top).offset(-10)
         }
         
-        continueButton.snp.makeConstraints { (make) in
+        continueButton.snp.makeConstraints { make in
+            make.top.equalTo(tableView.snp.bottom).offset(10)
+            make.height.equalTo(ContinueButton.height)
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().inset(40)
         }

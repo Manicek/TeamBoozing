@@ -1,12 +1,11 @@
 //
 //  Game.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 17/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
+
 
 class Game {
     
@@ -72,7 +71,7 @@ class Game {
                     allOpponents.append(contentsOf: teams[index].players)
                 }
                 allOpponents = allOpponents.shuffled()
-                opponent = allOpponents.first!
+                opponent = allOpponents.first ?? Player.unknown
             }
             let questionText = question.text(player: currentTeam.randomPlayer, opponent: opponent)
             let vc = TeamQuestionViewController(team: currentTeam, questionText: questionText, difficulty: question.difficulty)
@@ -95,7 +94,6 @@ class Game {
         let clearAlert = UIAlertController(title: "Konec", message: "Jste si jistí?", preferredStyle: UIAlertController.Style.alert)
         
         let endAction = UIAlertAction(title: "Ukončit hru", style: .destructive) { (_) in
-            
             Game.end()
         }
         let cancelAction = UIAlertAction(title: "Pokračovat", style: .default)
@@ -111,5 +109,4 @@ class Game {
         let vc = EndViewController()
         navigationController.setViewControllers([vc], animated: true)
     }
-
 }

@@ -1,12 +1,11 @@
 //
 //  StartButton.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 29/12/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
+
 
 class StartButton: UIButton {
     
@@ -14,7 +13,7 @@ class StartButton: UIButton {
     private(set) var team: Team?
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: super.intrinsicContentSize.width, height: StartButton.size)
+        CGSize(width: super.intrinsicContentSize.width, height: StartButton.size)
     }
     
     init() {
@@ -36,5 +35,4 @@ class StartButton: UIButton {
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
 }

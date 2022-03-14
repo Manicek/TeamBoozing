@@ -1,17 +1,16 @@
 //
 //  QuestionSetPickingViewController.swift
-//  Teamboozing
 //
 //  Created by Patrik Hora on 11/12/2019.
-//  Copyright © 2019 Manicek. All rights reserved.
 //
 
 import UIKit
 
+
 class QuestionSetPickingViewController: UIViewController {
     
     private let tableView = UITableView()
-
+    
     private let tableViewManager = QuestionSetTableViewManager()
     
     override func viewDidLoad() {
@@ -26,11 +25,18 @@ class QuestionSetPickingViewController: UIViewController {
     }
 }
 
+
+// MARK: - QuestionSetTableViewManagerDelegate
+
 extension QuestionSetPickingViewController: QuestionSetTableViewManagerDelegate {
+    
     func questionSetSelected(_ set: QuestionSet) {
          Game.start(questions: set.questions)
     }
 }
+
+
+// MARK: - Private extension
 
 private extension QuestionSetPickingViewController {
     
@@ -39,16 +45,13 @@ private extension QuestionSetPickingViewController {
     }
     
     func addSubviewsAndSetupConstraints() {
-        view.addSubviews([
-            tableView
-            ])
+        view.addSubview(tableView)
     
-        tableView.snp.makeConstraints { (make) in
+        tableView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(50)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
-            make.top.equalToSuperview().offset(50)
-            make.bottom.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview().inset(10)
         }
-
     }
 }

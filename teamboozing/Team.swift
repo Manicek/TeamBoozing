@@ -1,12 +1,11 @@
 //
 //  Team.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 17/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
+
 
 class Team: NSObject {
     
@@ -21,7 +20,7 @@ class Team: NSObject {
             toPickPlayers.append(contentsOf: players)
             toPickPlayers = toPickPlayers.shuffled()
         }
-        return toPickPlayers.popLast()!
+        return toPickPlayers.popLast() ?? Player.unknown
     }
     
     init(color: UIColor) {

@@ -1,42 +1,13 @@
 //
 //  Extensions.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 17/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
 
-extension Int {
-    static func random(_ upperBound: Int) -> Int {
-        return Int(arc4random_uniform(UInt32(upperBound)))
-    }
-    
-    /// Returns random Int between given bounds, inclusive. Swaps the bounds if lower > upper.
-    static func randomBetween(_ lowerBound: Int, _ upperBound: Int) -> Int {
-        if lowerBound > upperBound {
-            return randomBetween(upperBound, lowerBound)
-        }
-        return random(upperBound - lowerBound + 1) + lowerBound
-    }
-}
 
-extension MutableCollection where Index == Int {
-    
-    /// Shuffle the elements of `self` in-place.
-    mutating func shuffle() {
-        // empty and single-element collections don't shuffle
-        if count < 2 { return }
-        
-        for i in startIndex ..< endIndex - 1 {
-            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
-            if i != j {
-                self.swapAt(i, j)
-            }
-        }
-    }
-}
+// MARK: - UIColor
 
 extension UIColor {
     
@@ -51,6 +22,9 @@ extension UIColor {
     }
 }
 
+
+// MARK: - UIViewController
+
 extension UIViewController {
     
     /// Displays simple alert with message and title
@@ -62,6 +36,9 @@ extension UIViewController {
     }
 }
 
+
+// MARK: - UIView
+
 extension UIView {
     
     func addSubviews(_ subviews: [UIView]) {
@@ -71,14 +48,21 @@ extension UIView {
     }
 }
 
+
+// MARK: - UITableViewCell
+
 extension UITableViewCell {
     
     static var cellIdentifier: String {
-        return String(describing: self)
+        String(describing: self)
     }
 }
 
+
+// MARK: - String
+
 extension String {
+    
     static func stringWithHighlightedSubString(
         string: String,
         subString: String
@@ -109,14 +93,33 @@ extension String {
     }
 }
 
+
+// MARK: - UIDevice
+
 extension UIDevice {
+    
     static var isPad: Bool {
         return UIDevice.current.userInterfaceIdiom == .pad
     }
 }
 
+
+// MARK: - UIImage
+
 extension UIImage {
+    
     static var beer = UIImage(named: "beer")
     static var completed = UIImage(named: "completed")
     static var delete = UIImage(named: "delete")
+}
+
+
+// MARK: - UILabel
+
+extension UILabel {
+    
+    func makeMultiline() {
+        numberOfLines = 0
+        lineBreakMode = .byWordWrapping
+    }
 }

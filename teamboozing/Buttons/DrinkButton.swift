@@ -1,12 +1,11 @@
 //
 //  DrinkButton.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 17/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
+
 
 class DrinkButton: UIButton {
 
@@ -14,7 +13,7 @@ class DrinkButton: UIButton {
     private(set) var team: Team?
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: DrinkButton.size, height: DrinkButton.size)
+        CGSize(width: DrinkButton.size, height: DrinkButton.size)
     }
     
     init(team: Team? = nil) {

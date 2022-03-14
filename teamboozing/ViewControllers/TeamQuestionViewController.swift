@@ -1,12 +1,11 @@
 //
 //  TeamQuestionViewController.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 17/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
+
 
 class TeamQuestionViewController: UIViewController {
     
@@ -35,20 +34,32 @@ class TeamQuestionViewController: UIViewController {
         addSubviewsAndSetupConstraints()
     }
     
-    @objc func drinkButtonTapped() {
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+}
+
+
+// MARK: - Actions
+
+private extension TeamQuestionViewController {
+    
+    @objc
+    func drinkButtonTapped() {
         Game.showDrinkScreen(for: team, difficulty: difficulty)
     }
     
-    @objc func completedButtonTapped() {
+    @objc
+    func completedButtonTapped() {
         Game.showNextQuestion()
     }
     
-    @objc func quitButtonTapped() {
+    @objc
+    func quitButtonTapped() {
         Game.showEndAlert(from: self)
     }
-    
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
+
+
+// MARK: - Private extension
 
 private extension TeamQuestionViewController {
     
@@ -56,45 +67,45 @@ private extension TeamQuestionViewController {
         view.backgroundColor = .background
         
         completedButton.addTarget(self, action: #selector(completedButtonTapped), for: .touchUpInside)
-        
         drinkButton.addTarget(self, action: #selector(drinkButtonTapped), for: .touchUpInside)
-        
         quitButton.addTarget(self, action: #selector(quitButtonTapped), for: .touchUpInside)
     }
     
     func addSubviewsAndSetupConstraints() {
-        view.addSubviews([
-            membersLabel,
-            quitButton,
-            questionLabel,
-            drinkButton,
-            completedButton
-            ])
+        view.addSubviews(
+            [
+                membersLabel,
+                quitButton,
+                questionLabel,
+                drinkButton,
+                completedButton
+            ]
+        )
         
-        quitButton.snp.makeConstraints { (make) in
-            make.top.equalTo(topLayoutGuide.snp.bottom)
+        quitButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.right.equalToSuperview().inset(20)
         }
         
-        membersLabel.snp.makeConstraints { (make) in
+        membersLabel.snp.makeConstraints { make in
             make.top.equalTo(quitButton.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
         }
         
-        questionLabel.snp.makeConstraints { (make) in
+        questionLabel.snp.makeConstraints { make in
             make.centerX.width.equalTo(membersLabel)
             make.centerY.equalToSuperview()
         }
         
-        drinkButton.snp.makeConstraints { (make) in
+        drinkButton.snp.makeConstraints { make in
             make.right.equalTo(view.snp.centerX).offset(-30)
             make.bottom.equalToSuperview().inset(40)
         }
         
-        completedButton.snp.makeConstraints { (make) in
+        completedButton.snp.makeConstraints { make in
             make.left.equalTo(view.snp.centerX).offset(30)
-            make.bottom.height.width.equalTo(drinkButton)
+            make.bottom.size.equalTo(drinkButton)
         }
     }
 }

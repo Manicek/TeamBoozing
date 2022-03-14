@@ -1,13 +1,12 @@
 //
 //  ViewController.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 17/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
 import SnapKit
+
 
 class EnterNamesViewController: UIViewController {
     
@@ -49,6 +48,9 @@ class EnterNamesViewController: UIViewController {
     }
 }
 
+
+// MARK: - UITextFieldDelegate
+
 extension EnterNamesViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -63,7 +65,11 @@ extension EnterNamesViewController: UITextFieldDelegate {
     }
 }
 
+
+// MARK: - EnterNamesTableViewManagerDelegate
+
 extension EnterNamesViewController: EnterNamesTableViewManagerDelegate {
+    
     func playerCountChanged(_ count: Int) {
         startButton.isHidden = count < 4
         minimumPlayerLabel.isHidden = !startButton.isHidden
@@ -74,6 +80,9 @@ extension EnterNamesViewController: EnterNamesTableViewManagerDelegate {
     }
 }
 
+
+// MARK: - Private extension
+
 private extension EnterNamesViewController {
     
     func addPlayer() {
@@ -82,7 +91,11 @@ private extension EnterNamesViewController {
     }
     
     func showReusePlayersAlert() {
-        let reusePlayersAlert = UIAlertController(title: "Znovu!", message: "Chcete předvyplnit jména hráčů z minule?", preferredStyle: UIAlertController.Style.alert)
+        let reusePlayersAlert = UIAlertController(
+            title: "Znovu!",
+            message: "Chcete předvyplnit jména hráčů z minule?",
+            preferredStyle: UIAlertController.Style.alert
+        )
         
         let reuseAction = UIAlertAction(title: "Ano", style: .default) { (_) -> Void in
             var previousPlayers = [Player]()
@@ -103,9 +116,7 @@ private extension EnterNamesViewController {
     
     func setupUI() {
         view.backgroundColor = .background
-        
-        automaticallyAdjustsScrollViewInsets = false
-        
+
         let recognizer = UITapGestureRecognizer()
         recognizer.cancelsTouchesInView = false
         recognizer.addTarget(self, action: #selector(tapRecognized))
@@ -132,33 +143,35 @@ private extension EnterNamesViewController {
     }
     
     func addSubviewsAndSetupConstraints() {
-        view.addSubviews([
-            startButton,
-            minimumPlayerLabel,
-            tableView,
-            nameTextField
-            ])
+        view.addSubviews(
+            [
+                startButton,
+                minimumPlayerLabel,
+                tableView,
+                nameTextField
+            ]
+        )
         
-        startButton.snp.makeConstraints { (make) in
+        startButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.centerX.equalToSuperview()
-            make.top.equalTo(topLayoutGuide.snp.bottom)
         }
         
-        minimumPlayerLabel.snp.makeConstraints { (make) in
+        minimumPlayerLabel.snp.makeConstraints { make in
             make.center.equalTo(startButton)
         }
         
-        nameTextField.snp.makeConstraints { (make) in
+        nameTextField.snp.makeConstraints { make in
+            make.top.equalTo(startButton.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.75)
             make.height.equalTo(80)
-            make.top.equalTo(startButton.snp.bottom).offset(10)
         }
         
-        tableView.snp.makeConstraints { (make) in
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(nameTextField.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.75)
-            make.top.equalTo(nameTextField.snp.bottom).offset(10)
             make.bottom.equalToSuperview().inset(10)
         }
     }

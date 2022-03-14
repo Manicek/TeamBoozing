@@ -1,12 +1,11 @@
 //
 //  AppDelegate.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 17/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,5 +24,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-
 }

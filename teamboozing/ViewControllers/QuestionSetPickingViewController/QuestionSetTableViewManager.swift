@@ -1,19 +1,24 @@
 //
 //  QuestionSetTableViewManager.swift
-//  Teamboozing
 //
 //  Created by Patrik Hora on 11/12/2019.
-//  Copyright © 2019 Manicek. All rights reserved.
 //
 
 import UIKit
 
+
+// MARK: - QuestionSetTableViewManagerDelegate
+
 protocol QuestionSetTableViewManagerDelegate: AnyObject {
+    
     func questionSetSelected(_ set: QuestionSet)
 }
 
 
+// MARK: - QuestionSetTableViewManager
+
 class QuestionSetTableViewManager: NSObject {
+    
     var questionSets = [QuestionSet]() {
         didSet {
             reload()
@@ -21,38 +26,51 @@ class QuestionSetTableViewManager: NSObject {
     }
     
     weak var delegate: QuestionSetTableViewManagerDelegate?
-    weak var tableView: UITableView! {
+    weak var tableView: UITableView? {
         didSet {
-            tableView.dataSource = self
-            tableView.delegate = self
-            tableView.separatorStyle = .none
-            tableView.backgroundColor = .clear
-            tableView.estimatedRowHeight = 56
+            tableView?.dataSource = self
+            tableView?.delegate = self
+            tableView?.separatorStyle = .none
+            tableView?.backgroundColor = .clear
+            tableView?.estimatedRowHeight = 56
             
-            tableView.register(QuestionSetTableViewCell.self, forCellReuseIdentifier: QuestionSetTableViewCell.cellIdentifier)
+            tableView?.register(
+                QuestionSetTableViewCell.self, forCellReuseIdentifier: QuestionSetTableViewCell.cellIdentifier
+            )
         }
     }
     
     func reload() {
-        tableView.reloadData()
+        tableView?.reloadData()
     }
 }
 
-extension QuestionSetTableViewManager: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.questionSetSelected(questionSets[indexPath.row])
-    }
-}
+
+// MARK: - UITableViewDataSource
 
 extension QuestionSetTableViewManager: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questionSets.count
+        questionSets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: QuestionSetTableViewCell.cellIdentifier, for: indexPath) as! QuestionSetTableViewCell
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: QuestionSetTableViewCell.cellIdentifier, for: indexPath
+        ) as? QuestionSetTableViewCell else {
+            return UITableViewCell()
+        }
         cell.configure(questionSetName: questionSets[indexPath.row].name)
         return cell
     }
 }
 
+
+// MARK: - UITableViewDelegate
+
+extension QuestionSetTableViewManager: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.questionSetSelected(questionSets[indexPath.row])
+    }
+}

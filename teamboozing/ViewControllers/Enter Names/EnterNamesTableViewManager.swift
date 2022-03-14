@@ -1,17 +1,22 @@
 //
 //  EnterNamesTableViewManager.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 29/12/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
 
-protocol EnterNamesTableViewManagerDelegate: class {
+
+// MARK: - EnterNamesTableViewManagerDelegate
+
+protocol EnterNamesTableViewManagerDelegate: AnyObject {
+    
     func playerCountChanged(_ count: Int)
     func showUsedNameAlert()
 }
+
+
+// MARK: - EnterNamesTableViewManager
 
 class EnterNamesTableViewManager: NSObject {
     
@@ -23,20 +28,22 @@ class EnterNamesTableViewManager: NSObject {
     }
     
     weak var delegate: EnterNamesTableViewManagerDelegate?
-    weak var tableView: UITableView! {
+    weak var tableView: UITableView? {
         didSet {
-            tableView.dataSource = self
-            tableView.delegate = self
-            tableView.separatorStyle = .none
-            tableView.backgroundColor = .clear
-            tableView.estimatedRowHeight = 56
+            tableView?.dataSource = self
+            tableView?.delegate = self
+            tableView?.separatorStyle = .none
+            tableView?.backgroundColor = .clear
+            tableView?.estimatedRowHeight = 56
             
-            tableView.register(PlayerTableViewCell.self, forCellReuseIdentifier: PlayerTableViewCell.cellIdentifier)
+            tableView?.register(
+                PlayerTableViewCell.self, forCellReuseIdentifier: PlayerTableViewCell.cellIdentifier
+            )
         }
     }
     
     func reload() {
-        tableView.reloadData()
+        tableView?.reloadData()
     }
     
     func addPlayer(name: String) {
@@ -48,44 +55,48 @@ class EnterNamesTableViewManager: NSObject {
         }
         players.insert(Player(name: name), at: 0)
         delegate?.playerCountChanged(players.count)
-        tableView.reloadData()
+        tableView?.reloadData()
     }
 }
 
 
+// MARK: - UITableViewDataSource
+
 extension EnterNamesTableViewManager: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PlayerTableViewCell.cellIdentifier, for: indexPath) as! PlayerTableViewCell
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: PlayerTableViewCell.cellIdentifier, for: indexPath
+        ) as? PlayerTableViewCell else {
+            return UITableViewCell()
+        }
         cell.configure(self, player: players[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.count
+        players.count
     }
 }
 
+
+// MARK: - UITableViewDelegate
+
 extension EnterNamesTableViewManager: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
-    }
+    
 }
+
+
+// MARK: - PlayerTableViewCellDelegate
 
 extension EnterNamesTableViewManager: PlayerTableViewCellDelegate {
     
     func deletePlayer(_ player: Player) {
-        var indexToDelete = -1
-        for index in 0..<players.count {
-            if players[index].name == player.name {
-                indexToDelete = index
-                break
-            }
-        }
-        if indexToDelete > -1 {
+        let indexToDelete = players.firstIndex { $0.name == player.name }
+        if let indexToDelete = indexToDelete {
             players.remove(at: indexToDelete)
         }
         delegate?.playerCountChanged(players.count)
-        tableView.reloadData()
+        tableView?.reloadData()
     }
 }

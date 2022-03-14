@@ -1,12 +1,11 @@
 //
 //  AllQuestionViewController.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 17/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
+
 
 class AllQuestionViewController: UIViewController {
     
@@ -30,16 +29,29 @@ class AllQuestionViewController: UIViewController {
         addSubviewsAndSetupConstraints()
     }
     
-    @objc func quitButtonTapped() {
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+}
+
+
+// MARK: - Actions
+
+private extension AllQuestionViewController {
+    
+    @objc
+    func quitButtonTapped() {
         Game.showEndAlert(from: self)
     }
     
-    @objc func drinkButtonTapped(_ sender: DrinkButton) {
-        Game.showDrinkScreen(for: sender.team!, difficulty: question.difficulty)
+    @objc
+    func drinkButtonTapped(_ sender: DrinkButton) {
+        if let team = sender.team {
+            Game.showDrinkScreen(for: team, difficulty: question.difficulty)
+        }
     }
-    
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
+
+
+// MARK: - Private extension
 
 private extension AllQuestionViewController {
     
@@ -59,24 +71,26 @@ private extension AllQuestionViewController {
     }
     
     func addSubviewsAndSetupConstraints() {
-        view.addSubviews([
-            quitButton,
-            questionLabel,
-            drinkStackView
-            ])
+        view.addSubviews(
+            [
+                quitButton,
+                questionLabel,
+                drinkStackView
+            ]
+        )
         
-        quitButton.snp.makeConstraints { (make) in
-            make.top.equalTo(topLayoutGuide.snp.bottom)
+        quitButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.right.equalToSuperview().inset(20)
         }
         
-        questionLabel.snp.makeConstraints { (make) in
+        questionLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
             make.centerY.equalToSuperview()
         }
 
-        drinkStackView.snp.makeConstraints { (make) in
+        drinkStackView.snp.makeConstraints { make in
             make.centerX.equalTo(questionLabel)
             make.width.equalTo(Game.teams.count * Int(DrinkButton.size) + (Game.teams.count - 1) * 10)
             make.height.equalTo(DrinkButton.size)

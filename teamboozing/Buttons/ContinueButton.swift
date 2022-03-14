@@ -1,20 +1,15 @@
 //
 //  ContinueButton.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 17/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
 
+
 class ContinueButton: UIButton {
     
-    static let size: CGFloat = UIDevice.isPad ? 75 : 50
-    
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: super.intrinsicContentSize.width, height: ContinueButton.size)
-    }
+    static let height: CGFloat = UIDevice.isPad ? 75 : 50
 
     init() {
         super.init(frame: .zero)
@@ -35,5 +30,4 @@ class ContinueButton: UIButton {
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-
 }

@@ -1,12 +1,11 @@
 //
 //  EndViewController.swift
-//  teamboozing
 //
 //  Created by Patrik Hora on 20/08/2018.
-//  Copyright © 2018 MasterApp. All rights reserved.
 //
 
 import UIKit
+
 
 class EndViewController: UIViewController {
 
@@ -20,14 +19,24 @@ class EndViewController: UIViewController {
         setupUI()
         addSubviewsAndSetupConstraints()
     }
-    
-    @objc func completedButtonTapped() {
-        Game.restart()
-    }
-
 }
 
+
+// MARK: - Actions
+
 private extension EndViewController {
+    
+    @objc
+    func completedButtonTapped() {
+        Game.restart()
+    }
+}
+
+
+// MARK: - Private extension
+
+private extension EndViewController {
+    
     func setupUI() {
         view.backgroundColor = .background
         
@@ -39,7 +48,7 @@ private extension EndViewController {
         for team in Game.teams {
             let teamResultView = TeamResultView(team: team)
             stackView.addArrangedSubview(teamResultView)
-            teamResultView.snp.makeConstraints { (make) in
+            teamResultView.snp.makeConstraints { make in
                 make.width.equalToSuperview()
             }
         }
@@ -50,27 +59,31 @@ private extension EndViewController {
     func addSubviewsAndSetupConstraints() {
         view.addSubview(centeringView)
         
-        centeringView.addSubviews([
-            stackView,
-            completedButton
-            ])
+        centeringView.addSubviews(
+            [
+                stackView,
+                completedButton
+            ]
+        )
         
-        centeringView.snp.makeConstraints { (make) in
+        centeringView.snp.makeConstraints { make in
             make.width.equalToSuperview().multipliedBy(0.8)
             make.center.equalToSuperview()
         }
 
-        stackView.snp.makeConstraints { (make) in
+        stackView.snp.makeConstraints { make in
             make.centerX.top.width.equalToSuperview()
         }
         
-        completedButton.snp.makeConstraints { (make) in
+        completedButton.snp.makeConstraints { make in
             make.top.equalTo(stackView.snp.bottom).offset(20)
             make.centerX.bottom.equalToSuperview()
         }
     }
 }
 
+
+// MARK: - TeamResultView
 
 class TeamResultView: UIView {
     
@@ -88,19 +101,21 @@ class TeamResultView: UIView {
         drinkCountLabel.font = .drinkCount
         drinkCountLabel.text = "\(team.drinks) x"
         
-        addSubviews([
-            imageView,
-            drinkCountLabel
-            ])
+        addSubviews(
+            [
+                imageView,
+                drinkCountLabel
+            ]
+        )
         
-        imageView.snp.makeConstraints { (make) in
+        imageView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview().inset(10)
             make.centerY.equalToSuperview()
             make.left.equalTo(self.snp.centerX).offset(10)
             make.size.equalTo(DrinkButton.size)
-            make.top.bottom.equalToSuperview().inset(10)
         }
         
-        drinkCountLabel.snp.makeConstraints { (make) in
+        drinkCountLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.right.equalTo(imageView.snp.left).offset(-10)
         }

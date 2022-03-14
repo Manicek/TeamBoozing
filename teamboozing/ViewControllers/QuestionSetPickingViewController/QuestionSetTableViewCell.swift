@@ -1,12 +1,11 @@
 //
 //  QuestionSetTableViewCell.swift
-//  Teamboozing
 //
 //  Created by Patrik Hora on 11/12/2019.
-//  Copyright © 2019 Manicek. All rights reserved.
 //
 
 import UIKit
+
 
 class QuestionSetTableViewCell: UITableViewCell {
     
@@ -31,14 +30,14 @@ class QuestionSetTableViewCell: UITableViewCell {
         contentView.addSubview(containerView)
         containerView.addSubview(questionSetNameLabel)
         
-        containerView.snp.makeConstraints { (make) in
-            make.center.width.equalToSuperview()
+        containerView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(10)
+            make.center.width.equalToSuperview()
         }
         
-        questionSetNameLabel.snp.makeConstraints { (make) in
+        questionSetNameLabel.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview().inset(10)
             make.centerX.equalToSuperview()
-            make.bottom.top.equalToSuperview().inset(10)
             make.width.equalToSuperview().multipliedBy(0.95)
         }
     }
