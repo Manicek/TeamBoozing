@@ -23,6 +23,6 @@ extension UIFont {
     static let drinkCount = font(40)
     
     private static func font(_ size: CGFloat) -> UIFont {
-        systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? (size * 1.5) : size)
+        systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? (size * 2) : size)
     }
 }
